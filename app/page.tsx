@@ -36,7 +36,10 @@ const photoEssayImages = [
   { src: "https://images.unsplash.com/photo-1490806843957-31f4c9a91c65?auto=format&fit=crop&w=1800&q=90", label: "Tokio en flor" },
 ];
 
-const coverImage = "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=2400&q=95";
+const coverImage = "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=2400&q=95";
+const contentsImage = "https://images.unsplash.com/photo-1528360983277-13d401cdc186?auto=format&fit=crop&w=2000&q=94";
+const foodDetailImage = "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1600&q=92";
+const indexFeatureImage = "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=2200&q=94";
 
 function EditorialImage({
   src,
@@ -64,7 +67,7 @@ function EditorialImage({
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
-  const firstMenuLinkRef = useRef<HTMLAnchorElement>(null);
+  const menuCloseRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     if (!menuOpen) return;
@@ -76,7 +79,7 @@ export default function Home() {
     document.body.style.overflow = "hidden";
     main?.setAttribute("inert", "");
     footer?.setAttribute("inert", "");
-    firstMenuLinkRef.current?.focus();
+    menuCloseRef.current?.focus();
 
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") setMenuOpen(false);
@@ -105,12 +108,6 @@ export default function Home() {
           <p>01 SEPTIEMBRE 2026</p>
         </div>
 
-        <div className="mag-header-main">
-          <p className="mag-header-note">JAPÓN ES LO QUE MIRAMOS.<br />EL MUNDO HISPANOHABLANTE ES NUESTRA MIRADA.</p>
-          <a className="mag-header-wordmark" href="#top" aria-label="Bien Vivos, inicio">BIENVIVOS</a>
-          <p className="mag-header-note">ARTE · COMIDA · MÚSICA<br />CULTURA · FOTO · CALLE</p>
-        </div>
-
         <nav className="mag-nav" aria-label="Navegación principal">
           <div className="mag-nav-links">
             {navItems.map((item) => <a key={item.label} href={item.href}>{item.label}</a>)}
@@ -119,7 +116,7 @@ export default function Home() {
         </nav>
 
         <div className="mag-mobile-bar">
-          <a className="mag-mobile-logo" href="#top" onClick={closeMenu}>BIENVIVOS</a>
+          <a className="mag-mobile-logo" href="#top" onClick={closeMenu}>BIEN VIVOS</a>
           <button
             ref={menuButtonRef}
             type="button"
@@ -142,11 +139,19 @@ export default function Home() {
         aria-label="Menú principal"
         aria-hidden={!menuOpen}
       >
+        <button
+          ref={menuCloseRef}
+          type="button"
+          className="mag-mobile-menu-close"
+          onClick={closeMenu}
+          tabIndex={menuOpen ? 0 : -1}
+        >
+          CERRAR <span aria-hidden="true">×</span>
+        </button>
         <nav aria-label="Navegación móvil">
           {navItems.map((item, index) => (
             <a
               key={item.label}
-              ref={index === 0 ? firstMenuLinkRef : undefined}
               href={item.href}
               onClick={closeMenu}
               tabIndex={menuOpen ? 0 : -1}
@@ -170,7 +175,7 @@ export default function Home() {
               <p>ARTE · COMIDA · MÚSICA · CULTURA · FOTO</p>
             </div>
 
-            <div className="mag-cover-masthead" aria-hidden="true">BIENVIVOS</div>
+            <div className="mag-cover-masthead" aria-hidden="true">BIEN VIVOS</div>
 
             <div className="mag-cover-story">
               <p className="mag-kicker">HISTORIA DE PORTADA · PÁG. 08</p>
@@ -207,11 +212,11 @@ export default function Home() {
 
             <figure className="mag-contents-image mag-media">
               <EditorialImage
-                src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=2000&q=94"
-                alt="Mesa de restaurante preparada para una comida larga"
-                sizes="(max-width: 640px) 100vw, (max-width: 899px) 58vw, 58vw"
+                src={contentsImage}
+                alt="Tokio en movimiento, entre color, calle y vida cotidiana"
+                sizes="(max-width: 640px) 100vw, (max-width: 899px) 58vw, 34vw"
               />
-              <figcaption className="mag-credit">FOTO · BIEN VIVOS / TOKIO</figcaption>
+              <figcaption className="mag-credit">CALLE · BIEN VIVOS / TOKIO</figcaption>
             </figure>
 
             <div className="mag-contents-list">
@@ -278,9 +283,18 @@ export default function Home() {
               <EditorialImage
                 src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=2200&q=95"
                 alt="Mesa de restaurante con platos y copas"
-                sizes="(max-width: 640px) 100vw, (max-width: 899px) 58vw, 58vw"
+                sizes="(max-width: 640px) 100vw, (max-width: 899px) 58vw, 50vw"
               />
               <figcaption className="mag-credit">FOTOGRAFÍA · BIEN VIVOS / PÁG. 08</figcaption>
+            </figure>
+
+            <figure className="mag-feature-image-detail mag-media">
+              <EditorialImage
+                src={foodDetailImage}
+                alt="Mesa compartida con platos de colores y conversación"
+                sizes="(max-width: 640px) 100vw, (max-width: 899px) 42vw, 28vw"
+              />
+              <figcaption className="mag-credit">SOBREMESA · DETALLE / PÁG. 11</figcaption>
             </figure>
 
             <div className="mag-feature-copy">
@@ -337,6 +351,18 @@ export default function Home() {
             <p>Cuatro historias breves para leer entre una estación y la siguiente. Rápidas, visuales y con ganas de sacarte de casa.</p>
           </div>
 
+          <figure className="mag-index-feature mag-media">
+            <EditorialImage
+              src={indexFeatureImage}
+              alt="Tokio iluminado, lleno de cruces, carteles y movimiento nocturno"
+              sizes="(max-width: 640px) 100vw, 92vw"
+            />
+            <figcaption>
+              <span className="mag-kicker">TOKIO AHORA · PÁG. 64–76</span>
+              <strong>Una ciudad para mirar de cerca, no desde la rutina.</strong>
+            </figcaption>
+          </figure>
+
           <div className="mag-index-list">
             {indexStories.map((story) => (
               <article className="mag-index-row" key={story.page}>
@@ -378,7 +404,7 @@ export default function Home() {
           <div className="mag-back-inner">
             <div className="mag-mini-cover" aria-label="Vista previa de la edición inaugural de Bien Vivos">
               <EditorialImage src={coverImage} alt="" sizes="(max-width: 640px) 70vw, 20rem" />
-              <strong>BIENVIVOS</strong>
+              <strong>BIEN VIVOS</strong>
               <h3>Tokio necesita más pasión</h3>
               <p>Nº 01 · SEPTIEMBRE 2026</p>
             </div>
@@ -413,7 +439,7 @@ export default function Home() {
           </div>
         </div>
 
-        <a className="mag-footer-wordmark" href="#top" aria-label="Volver arriba">BIENVIVOS</a>
+        <a className="mag-footer-wordmark" href="#top" aria-label="Volver arriba">BIEN VIVOS</a>
 
         <div className="mag-footer-bottom">
           <p>© 2026 BIEN VIVOS</p>
