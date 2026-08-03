@@ -13,6 +13,7 @@ import "./styles/crisp-cover.css";
 import "./styles/launch-hard-reset.css";
 import "./styles/site-audit.css";
 import "./styles/masculine-palette.css";
+import "./styles/social-icons.css";
 
 const sans = Montserrat({
   variable: "--font-bienvivos-sans",
