@@ -14,6 +14,8 @@
 }
 
 @media (max-width: 899px) {
+  main section[id] { scroll-margin-top: 5.25rem; }
+
   .desktop-brand,
   .desktop-nav { display: none; }
 
@@ -166,7 +168,24 @@
     display: flex;
     flex-direction: column;
   }
-  .art-copy { order: 1; padding: 0 0 2rem; }
+  .art-copy {
+    order: 1;
+    width: 100%;
+    padding: 0 0 2.5rem;
+  }
+  .art-copy h2 {
+    max-width: 12ch;
+    font-size: clamp(3.35rem, 10.5vw, 5.5rem);
+    line-height: .9;
+    overflow-wrap: normal;
+    word-break: normal;
+    hyphens: none;
+  }
+  .art-copy .story-deck {
+    max-width: 36rem;
+    font-size: clamp(1.45rem, 4.2vw, 2rem);
+    line-height: 1.08;
+  }
   .art-image-main { order: 2; min-height: 65svh; }
   .art-image-detail {
     order: 3;
@@ -243,18 +262,26 @@
   .hero-bottom > p { font-size: 1.35rem; }
   .hero-date { display: none; }
   .section-heading-row { align-items: flex-start; }
-  .section-note { max-width: 13rem; }
+  .section-note {
+    max-width: 11rem;
+    font-size: .61rem;
+    line-height: 1.35;
+  }
   .restaurant-image,
   .art-image-main,
   .culture-image,
   .detail-image-main { min-height: 57svh; }
   .restaurant-image { box-shadow: .7rem .7rem 0 var(--coral); }
   .story-copy h2,
-  .art-copy h2,
   .detail-intro h2,
   .photo-essay-heading h2,
   .launch-note h2,
   .footer-top h2 { font-size: clamp(3.5rem,15vw,5.5rem); }
+  .art-copy h2 {
+    max-width: 10.5ch;
+    font-size: clamp(3rem, 11.5vw, 4.25rem);
+    line-height: .92;
+  }
   .music-intro h2,
   .culture-title-wrap h2 { font-size: clamp(4.2rem,18vw,6.5rem); }
   .music-card,
@@ -274,6 +301,15 @@
   }
   .footer-bottom p:nth-child(2),
   .footer-bottom a { text-align: left; }
+}
+
+@media (max-width: 380px) {
+  .art-copy h2 {
+    max-width: none;
+    font-size: 2.85rem;
+    letter-spacing: -.045em;
+  }
+  .art-copy .story-deck { font-size: 1.35rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
