@@ -1,0 +1,326 @@
+/* Final editorial balance: vivid photography, reliable motion, safer type, stronger palette. */
+
+:root {
+  --tomato: #e43d30;
+  --saffron: #f4ad16;
+  --navy: #102b66;
+  --aubergine: #42152f;
+  --electric-blue: #1458d6;
+}
+
+/* Photography must never inherit a reveal filter or a half-finished opacity state. */
+.editorial-image,
+.music-card,
+.music-card-image,
+.photo-tile,
+.photo-tile > div,
+.hero-image,
+.restaurant-image,
+.art-image-main,
+.art-image-detail,
+.culture-image,
+.detail-image-main,
+.detail-image-small {
+  filter: none !important;
+  opacity: 1 !important;
+  background-blend-mode: normal !important;
+}
+
+/* Keep image overlays crisp and intentional rather than milky. */
+.editorial-image::after,
+.music-card-image::after,
+.photo-tile > div::after {
+  background: linear-gradient(135deg, rgba(255,255,255,.055), transparent 38%);
+  mix-blend-mode: normal;
+}
+
+/* A stronger Spanish editorial palette: blue, tomato, saffron, ink, cream.
+   Pink and purple remain accents rather than the whole personality. */
+.manifesto-strip {
+  color: var(--white);
+  background: var(--tomato);
+}
+.manifesto-strip em { color: var(--cream); }
+
+.art-section {
+  background:
+    radial-gradient(circle at 88% 14%, rgba(20,88,214,.78), transparent 32%),
+    linear-gradient(145deg, var(--aubergine) 0%, #24102d 62%, var(--ink) 100%);
+}
+.art-image-detail { border-color: var(--saffron); }
+
+.music-section {
+  background:
+    linear-gradient(135deg, rgba(16,43,102,.2), transparent 40%),
+    var(--electric-blue);
+}
+
+.photo-essay {
+  color: var(--ink);
+  background: var(--saffron);
+}
+.photo-essay-heading h2 { color: var(--aubergine); }
+
+.launch-note {
+  background:
+    radial-gradient(circle at 18% 20%, rgba(244,173,22,.58), transparent 20%),
+    radial-gradient(circle at 84% 22%, rgba(20,88,214,.62), transparent 28%),
+    radial-gradient(circle at 72% 84%, rgba(228,61,48,.48), transparent 26%),
+    linear-gradient(145deg, var(--aubergine) 0%, var(--navy) 52%, var(--ink) 100%);
+}
+
+.mobile-menu {
+  background:
+    radial-gradient(circle at 86% 12%, var(--saffron), transparent 17%),
+    radial-gradient(circle at 13% 84%, var(--electric-blue), transparent 29%),
+    var(--tomato) !important;
+}
+.menu-toggle { background: var(--tomato); }
+.desktop-nav a::after { background: var(--tomato); }
+
+.footer-top h2 { color: var(--tomato); }
+.footer-masthead { color: var(--coral); }
+
+/* Type safety: retain drama without letting glyphs collide or lines sit on top of one another. */
+.masthead,
+.footer-masthead {
+  letter-spacing: -.07em;
+  line-height: .82;
+}
+
+.hero-title {
+  max-width: 14ch;
+  font-size: clamp(5rem, 10.2vw, 11rem);
+  letter-spacing: -.06em;
+  line-height: .78;
+}
+.hero-title span:nth-child(2) { margin-left: .38em; }
+
+.manifesto-strip span,
+.manifesto-strip em {
+  letter-spacing: -.035em;
+  line-height: .98;
+}
+
+.story-copy h2,
+.art-copy h2,
+.detail-intro h2,
+.photo-essay-heading h2,
+.launch-note h2,
+.footer-top h2 {
+  letter-spacing: -.04em;
+  line-height: .98;
+  text-wrap: balance;
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
+}
+
+.art-copy h2 {
+  max-width: 7.4ch;
+  font-size: clamp(3.4rem, 5.7vw, 6.7rem);
+  line-height: .96;
+}
+
+.music-intro h2 {
+  font-size: clamp(4.7rem, 9.2vw, 10.5rem);
+  letter-spacing: -.055em;
+  line-height: .82;
+  text-wrap: balance;
+}
+
+.music-card-copy h3 {
+  letter-spacing: -.04em;
+  line-height: .96;
+  text-wrap: balance;
+}
+
+.culture-title-wrap h2 {
+  font-size: clamp(4.7rem, 9.2vw, 10.5rem);
+  letter-spacing: -.055em;
+  line-height: .82;
+  text-wrap: balance;
+}
+.culture-title-wrap h2 em { margin-left: .32em; }
+
+.detail-quote > span { line-height: .88; }
+.detail-quote p {
+  line-height: 1.06;
+  text-wrap: balance;
+}
+
+.launch-note h2 {
+  max-width: 11ch;
+  font-size: clamp(4rem, 8vw, 9.5rem);
+  line-height: .92;
+}
+
+/* Transform-only scroll choreography. No blur, grayscale, saturation, or opacity reveals. */
+@supports (animation-timeline: view()) {
+  @media (min-width: 900px) {
+    .restaurant-image {
+      animation: safe-photo-rise linear both !important;
+      animation-range: entry 5% cover 36% !important;
+      animation-timeline: view() !important;
+    }
+    .art-image-main {
+      animation: safe-photo-rise linear both !important;
+      animation-range: entry 8% cover 42% !important;
+      animation-timeline: view() !important;
+    }
+    .art-image-detail {
+      animation: safe-detail-rise linear both !important;
+      animation-range: entry 15% cover 50% !important;
+      animation-timeline: view() !important;
+    }
+    .culture-image,
+    .detail-image-main {
+      animation: safe-photo-rise linear both !important;
+      animation-range: entry 8% cover 44% !important;
+      animation-timeline: view() !important;
+    }
+    .detail-image-small {
+      animation: safe-detail-rise linear both !important;
+      animation-range: entry 18% cover 55% !important;
+      animation-timeline: view() !important;
+    }
+    .music-card-primary,
+    .music-card-secondary {
+      animation: safe-card-rise linear both !important;
+      animation-range: entry 8% cover 45% !important;
+      animation-timeline: view() !important;
+    }
+    .photo-tile:nth-child(odd) > div {
+      animation: safe-photo-drift-a linear both !important;
+      animation-range: entry 5% exit 95% !important;
+      animation-timeline: view() !important;
+    }
+    .photo-tile:nth-child(even) > div {
+      animation: safe-photo-drift-b linear both !important;
+      animation-range: entry 5% exit 95% !important;
+      animation-timeline: view() !important;
+    }
+  }
+}
+
+@keyframes safe-photo-rise {
+  from { transform: translateY(2.4rem) scale(1.025); }
+  to { transform: translateY(0) scale(1); }
+}
+@keyframes safe-detail-rise {
+  from { transform: translateY(3rem) rotate(-4deg) scale(.98); }
+  to { transform: translateY(0) rotate(-2deg) scale(1); }
+}
+@keyframes safe-card-rise {
+  from { transform: translateY(3.5rem); }
+  to { transform: translateY(0); }
+}
+@keyframes safe-photo-drift-a {
+  from { transform: translateY(1.5rem) scale(1); }
+  to { transform: translateY(-1.5rem) scale(1.018); }
+}
+@keyframes safe-photo-drift-b {
+  from { transform: translateY(2rem) scale(1); }
+  to { transform: translateY(-2rem) scale(1.018); }
+}
+
+@media (max-width: 899px) {
+  .hero-title {
+    max-width: 11ch;
+    font-size: clamp(4rem, 16vw, 7rem);
+    line-height: .82;
+  }
+  .hero-title span:nth-child(2) { margin-left: .12em; }
+
+  .manifesto-strip span,
+  .manifesto-strip em {
+    font-size: clamp(2.8rem, 9.5vw, 5rem);
+    line-height: 1;
+  }
+
+  .art-copy h2 {
+    max-width: 10ch;
+    font-size: clamp(3rem, 9.5vw, 5rem);
+    line-height: .98;
+  }
+
+  .music-intro h2,
+  .culture-title-wrap h2 {
+    font-size: clamp(4rem, 14vw, 7.2rem);
+    line-height: .86;
+  }
+  .culture-title-wrap h2 em { margin-left: 0; }
+
+  .story-copy h2,
+  .detail-intro h2,
+  .photo-essay-heading h2,
+  .launch-note h2,
+  .footer-top h2 {
+    font-size: clamp(3.2rem, 12.5vw, 5.3rem);
+    line-height: 1;
+  }
+
+  .music-card-copy h3 {
+    font-size: clamp(2.5rem, 10vw, 4.5rem);
+    line-height: 1;
+  }
+
+  .detail-quote > span { font-size: clamp(3.3rem, 13vw, 6rem); }
+  .detail-quote p { font-size: clamp(1.7rem, 7vw, 3rem); }
+
+  .footer-masthead {
+    font-size: clamp(4rem, 16vw, 8rem);
+    line-height: .88;
+  }
+
+  /* Mobile motion remains light, vivid, and independent of browser scroll-timeline bugs. */
+  .restaurant-image,
+  .art-image-main,
+  .culture-image,
+  .detail-image-main {
+    animation: mobile-vivid-breathe 8s ease-in-out infinite alternate !important;
+  }
+  .art-image-detail,
+  .detail-image-small {
+    animation: mobile-vivid-float 7s ease-in-out infinite alternate !important;
+  }
+}
+
+@keyframes mobile-vivid-breathe {
+  from { transform: translateY(0) scale(1); }
+  to { transform: translateY(-.3rem) scale(1.012); }
+}
+@keyframes mobile-vivid-float {
+  from { transform: translateY(0) rotate(-2deg); }
+  to { transform: translateY(-.5rem) rotate(-.4deg); }
+}
+
+@media (max-width: 560px) {
+  .hero-title { font-size: clamp(3.75rem, 17.5vw, 5.7rem); }
+  .section-heading-row { gap: .65rem; }
+  .section-heading-row > * { min-width: 0; }
+  .section-note { max-width: 9.5rem; }
+  .art-copy h2 { font-size: clamp(2.85rem, 10.3vw, 4rem); }
+  .music-intro h2,
+  .culture-title-wrap h2 { font-size: clamp(3.7rem, 15vw, 5.8rem); }
+  .launch-note h2 { max-width: 9ch; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .editorial-image,
+  .music-card,
+  .music-card-image,
+  .photo-tile,
+  .photo-tile > div,
+  .hero-image,
+  .restaurant-image,
+  .art-image-main,
+  .art-image-detail,
+  .culture-image,
+  .detail-image-main,
+  .detail-image-small {
+    filter: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
