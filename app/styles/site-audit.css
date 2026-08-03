@@ -1,0 +1,283 @@
+/* Final cross-browser audit layer.
+   Loaded last so safety rules win over decorative experiments. */
+
+html,
+body {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+body {
+  min-height: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+.site-shell,
+.site-header,
+main,
+.site-footer,
+main > section {
+  min-width: 0;
+  max-width: 100%;
+}
+
+main > section {
+  overflow-x: clip;
+}
+
+/* Never let reveal choreography wash out an entire section. */
+@keyframes section-rise-safe {
+  from { transform: translateY(2.5rem); }
+  to { transform: translateY(0); }
+}
+
+@supports (animation-timeline: view()) {
+  .reveal:not(.launch-note) {
+    opacity: 1 !important;
+    filter: none !important;
+    animation-name: section-rise-safe !important;
+    animation-range: entry 8% cover 30%;
+    animation-timeline: view();
+  }
+}
+
+/* Photography must always keep its original color and contrast. */
+.editorial-image,
+.music-card-image,
+.photo-tile > div,
+.hero-image,
+.restaurant-image,
+.art-image-main,
+.art-image-detail,
+.culture-image,
+.detail-image-main,
+.detail-image-small {
+  opacity: 1 !important;
+  filter: none !important;
+  background-blend-mode: normal !important;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Remove decorative image sheens that can look like haze on touch devices. */
+@media (hover: none), (pointer: coarse) {
+  .editorial-image::after,
+  .music-card-image::after,
+  .photo-tile > div::after {
+    display: none !important;
+    content: none !important;
+  }
+}
+
+/* Typography containment and browser-safe wrapping. */
+.hero-title,
+.story-copy h2,
+.art-copy h2,
+.music-intro h2,
+.culture-title-wrap h2,
+.detail-intro h2,
+.photo-essay-heading h2,
+.launch-note h2,
+.footer-top h2,
+.footer-masthead {
+  max-width: 100%;
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
+}
+
+.section-heading-row,
+.hero-bottom,
+.restaurant-grid,
+.art-layout,
+.music-intro,
+.music-cards,
+.culture-grid,
+.detail-intro,
+.detail-layout,
+.photo-essay-heading,
+.footer-top,
+.footer-links,
+.footer-bottom {
+  min-width: 0;
+}
+
+.section-heading-row > *,
+.hero-bottom > *,
+.restaurant-grid > *,
+.art-layout > *,
+.music-intro > *,
+.music-cards > *,
+.culture-grid > *,
+.detail-intro > *,
+.detail-layout > *,
+.photo-essay-heading > *,
+.footer-top > *,
+.footer-links > *,
+.footer-bottom > * {
+  min-width: 0;
+}
+
+/* Keyboard and touch accessibility. */
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--mango);
+  outline-offset: 4px;
+}
+
+.menu-toggle,
+.mobile-menu nav a,
+.story-cta {
+  touch-action: manipulation;
+}
+
+@media (max-width: 899px) {
+  .mobile-header {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .mobile-menu,
+  .mobile-menu-inner {
+    width: 100%;
+    max-width: 100%;
+    min-height: 100dvh;
+  }
+
+  .mobile-menu-inner {
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+
+  .mobile-menu nav a {
+    font-size: clamp(2.75rem, 13vw, 5.25rem);
+    line-height: 1;
+  }
+
+  .hero-title {
+    font-size: clamp(4rem, 18vw, 7rem);
+    line-height: .8;
+    letter-spacing: -.065em;
+  }
+
+  .manifesto-strip span,
+  .manifesto-strip em {
+    line-height: .92;
+  }
+
+  .music-intro h2,
+  .culture-title-wrap h2 {
+    line-height: .84;
+  }
+
+  .photo-grid {
+    max-width: 100%;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .launch-note {
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  .launch-note::before {
+    margin-right: auto !important;
+    margin-left: auto !important;
+  }
+
+  .launch-note > p,
+  .launch-note > h2,
+  .launch-note > span {
+    box-sizing: border-box;
+    width: min(100%, 32rem) !important;
+    max-width: calc(100vw - 2rem) !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
+    text-align: center !important;
+  }
+
+  .launch-note > h2 {
+    font-size: clamp(2.9rem, 10vw, 4.6rem) !important;
+    line-height: .98 !important;
+    letter-spacing: -.045em !important;
+    text-wrap: balance;
+  }
+
+  .footer-masthead {
+    display: block;
+    width: 100%;
+    font-size: clamp(3.9rem, 16vw, 8rem);
+    line-height: .9;
+  }
+}
+
+@media (max-width: 560px) {
+  .story-section,
+  .culture-feature,
+  .detail-feature,
+  .photo-essay,
+  .launch-note,
+  .site-footer {
+    padding-right: max(1rem, env(safe-area-inset-right));
+    padding-left: max(1rem, env(safe-area-inset-left));
+  }
+
+  .section-heading-row {
+    flex-wrap: wrap;
+  }
+
+  .section-note {
+    max-width: 100%;
+  }
+
+  .story-copy h2,
+  .detail-intro h2,
+  .photo-essay-heading h2,
+  .footer-top h2 {
+    font-size: clamp(3rem, 13vw, 4.8rem);
+    line-height: .94;
+  }
+
+  .art-copy h2 {
+    max-width: 100%;
+    font-size: clamp(2.8rem, 11vw, 4rem);
+    line-height: .96;
+  }
+
+  .launch-note > h2 {
+    width: 100% !important;
+    max-width: 11ch !important;
+    font-size: clamp(2.7rem, 12vw, 3.6rem) !important;
+    line-height: 1 !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .mobile-menu nav a {
+    font-size: 2.7rem;
+  }
+
+  .hero-title {
+    font-size: 3.9rem;
+  }
+
+  .launch-note > h2 {
+    font-size: 2.6rem !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .launch-note,
+  .launch-note::before,
+  .editorial-image,
+  .music-card-image,
+  .photo-tile > div {
+    opacity: 1 !important;
+    filter: none !important;
+    transform: none !important;
+  }
+}
