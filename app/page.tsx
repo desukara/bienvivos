@@ -29,6 +29,7 @@ export default function Home() {
     if (!menuOpen) return;
 
     const previousOverflow = document.body.style.overflow;
+    const menuButton = menuButtonRef.current;
     const main = document.querySelector<HTMLElement>("main");
     const footer = document.querySelector<HTMLElement>("footer");
     main?.setAttribute("inert", "");
@@ -44,7 +45,7 @@ export default function Home() {
 
       if (event.key !== "Tab") return;
       const focusable = [
-        menuButtonRef.current,
+        menuButton,
         ...Array.from(document.querySelectorAll<HTMLAnchorElement>("#mobile-menu a")),
       ].filter(Boolean) as HTMLElement[];
       if (!focusable.length) return;
@@ -66,7 +67,7 @@ export default function Home() {
       main?.removeAttribute("inert");
       footer?.removeAttribute("inert");
       window.removeEventListener("keydown", handleKeyDown);
-      menuButtonRef.current?.focus();
+      menuButton?.focus();
     };
   }, [menuOpen]);
 
