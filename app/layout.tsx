@@ -5,6 +5,7 @@ import "./styles/header.css";
 import "./styles/features.css";
 import "./styles/features-two.css";
 import "./styles/responsive.css";
+import "./styles/polish.css";
 
 const sans = Montserrat({
   variable: "--font-bienvivos-sans",
@@ -21,7 +22,10 @@ const display = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://bienvivos.com"),
+  metadataBase: new URL("https://www.bienvivos.com"),
+  alternates: {
+    canonical: "/",
+  },
   title: {
     default: "Bien Vivos — Tokio se vive mejor en español",
     template: "%s | Bien Vivos",
@@ -44,21 +48,26 @@ export const metadata: Metadata = {
     title: "Bien Vivos — Tokio se vive mejor en español",
     description:
       "La revista de Tokio para el mundo hispanohablante. Edición inaugural: 1 de septiembre de 2026.",
-    url: "https://bienvivos.com",
+    url: "/",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Bien Vivos — Tokio se vive mejor en español",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Bien Vivos — Tokio se vive mejor en español",
     description:
       "La revista de Tokio para el mundo hispanohablante. Edición inaugural: 1 de septiembre de 2026.",
+    images: ["/opengraph-image"],
   },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="es">
       <body className={`${sans.variable} ${display.variable}`}>{children}</body>
