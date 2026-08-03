@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Montserrat } from "next/font/google";
 import "./globals.css";
+import "./styles/header.css";
+import "./styles/features.css";
+import "./styles/features-two.css";
+import "./styles/responsive.css";
 
 const sans = Montserrat({
   variable: "--font-bienvivos-sans",
