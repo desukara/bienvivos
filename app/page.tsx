@@ -42,8 +42,8 @@ export default function Home() {
         setMenuOpen(false);
         return;
       }
-
       if (event.key !== "Tab") return;
+
       const focusable = [
         menuButton,
         ...Array.from(document.querySelectorAll<HTMLAnchorElement>("#mobile-menu a")),
@@ -145,7 +145,7 @@ export default function Home() {
 
       <main id="contenido">
         <section className="hero" id="revista" aria-labelledby="hero-title">
-          <div className="hero-image" role="img" aria-label="Imagen provisional de una calle nocturna de Tokio" style={{ backgroundImage: 'linear-gradient(110deg, rgba(24, 9, 19, .14), rgba(24, 9, 19, .62)), url("https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=2200&q=90")' }} />
+          <div className="hero-image" role="img" aria-label="Calle nocturna de Tokio" style={{ backgroundImage: 'linear-gradient(110deg, rgba(24, 9, 19, .14), rgba(24, 9, 19, .62)), url("https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=2200&q=90")' }} />
           <div className="hero-bloom hero-bloom-one" aria-hidden="true" />
           <div className="hero-bloom hero-bloom-two" aria-hidden="true" />
           <div className="hero-content">
@@ -167,7 +167,7 @@ export default function Home() {
         <section className="story-section restaurant-section reveal" id="comer">
           <div className="section-heading-row"><p className="section-kicker">01 · COMER</p><p className="section-note">RESTAURANTE DE PORTADA</p></div>
           <div className="restaurant-grid">
-            <div className="editorial-image restaurant-image" role="img" aria-label="Imagen provisional de una mesa de restaurante" style={{ backgroundImage: 'linear-gradient(180deg, rgba(24, 9, 19, .02), rgba(24, 9, 19, .22)), url("https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1800&q=90")' }}><span className="image-label">IMAGEN PROVISIONAL</span><span className="image-number">01</span></div>
+            <div className="editorial-image restaurant-image" role="img" aria-label="Mesa de restaurante" style={{ backgroundImage: 'linear-gradient(180deg, rgba(24, 9, 19, .02), rgba(24, 9, 19, .22)), url("https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1800&q=90")' }} />
             <div className="story-copy restaurant-copy">
               <p className="story-overline">UNA HISTORIA PARA COMERSE ENTERA</p>
               <h2>Una mesa española que hace latir Tokio</h2>
@@ -188,8 +188,8 @@ export default function Home() {
               <p className="story-deck">Miraremos de cerca, elegiremos con criterio y diremos lo que sentimos sin convertir la experiencia en una clase de historia.</p>
               <span className="story-cta story-cta-light">PRÓXIMAMENTE ↗</span>
             </div>
-            <div className="editorial-image art-image-main" role="img" aria-label="Imagen provisional de una exposición de arte" style={{ backgroundImage: 'linear-gradient(180deg, rgba(26, 8, 34, .02), rgba(26, 8, 34, .15)), url("https://images.unsplash.com/photo-1561214115-f2f134cc4912?auto=format&fit=crop&w=1500&q=90")' }}><span className="image-label image-label-light">IMAGEN PROVISIONAL</span></div>
-            <div className="editorial-image art-image-detail" role="img" aria-label="Detalle provisional de una obra de arte" style={{ backgroundImage: 'linear-gradient(180deg, rgba(26, 8, 34, .04), rgba(26, 8, 34, .2)), url("https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?auto=format&fit=crop&w=1100&q=90")' }}><span className="art-caption">DETALLE / EXPOSICIÓN 01</span></div>
+            <div className="editorial-image art-image-main" role="img" aria-label="Exposición de arte" style={{ backgroundImage: 'linear-gradient(180deg, rgba(26, 8, 34, .02), rgba(26, 8, 34, .15)), url("https://images.unsplash.com/photo-1561214115-f2f134cc4912?auto=format&fit=crop&w=1500&q=90")' }} />
+            <div className="editorial-image art-image-detail" role="img" aria-label="Detalle de una obra de arte" style={{ backgroundImage: 'linear-gradient(180deg, rgba(26, 8, 34, .04), rgba(26, 8, 34, .2)), url("https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?auto=format&fit=crop&w=1100&q=90")' }} />
           </div>
         </section>
 
@@ -200,15 +200,15 @@ export default function Home() {
             <p>Aunque a veces lo parezca. Exploramos las listas, los clubes, las tendencias y las obsesiones que están marcando el ritmo de la ciudad.</p>
           </div>
           <div className="music-cards">
-            <article className="music-card music-card-primary"><div className="music-card-image" role="img" aria-label="Imagen provisional de un concierto" style={{ backgroundImage: 'linear-gradient(180deg, rgba(5, 10, 63, .04), rgba(5, 10, 63, .72)), url("https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=1500&q=90")' }} /><div className="music-card-copy"><p>ARTÍCULO 01</p><h3>Qué está escuchando Tokio ahora</h3><span>PRÓXIMAMENTE ↗</span></div></article>
-            <article className="music-card music-card-secondary"><div className="music-card-image" role="img" aria-label="Imagen provisional de una pista de baile" style={{ backgroundImage: 'linear-gradient(180deg, rgba(5, 10, 63, .02), rgba(5, 10, 63, .72)), url("https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1300&q=90")' }} /><div className="music-card-copy"><p>ARTÍCULO 02 · OPCIONAL</p><h3>La noche también tiene acento</h3><span>EN DESARROLLO ↗</span></div></article>
+            <article className="music-card music-card-primary"><div className="music-card-image" role="img" aria-label="Concierto" style={{ backgroundImage: 'linear-gradient(180deg, rgba(5, 10, 63, .04), rgba(5, 10, 63, .72)), url("https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=1500&q=90")' }} /><div className="music-card-copy"><p>ARTÍCULO 01</p><h3>Qué está escuchando Tokio ahora</h3><span>PRÓXIMAMENTE ↗</span></div></article>
+            <article className="music-card music-card-secondary"><div className="music-card-image" role="img" aria-label="Pista de baile" style={{ backgroundImage: 'linear-gradient(180deg, rgba(5, 10, 63, .02), rgba(5, 10, 63, .72)), url("https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1300&q=90")' }} /><div className="music-card-copy"><p>ARTÍCULO 02 · OPCIONAL</p><h3>La noche también tiene acento</h3><span>EN DESARROLLO ↗</span></div></article>
           </div>
         </section>
 
         <section className="culture-feature reveal" id="cultura">
           <div className="culture-title-wrap"><p className="section-kicker">04 · CULTURA</p><h2>Después de comer<em>empieza la vida.</em></h2></div>
           <div className="culture-grid">
-            <div className="editorial-image culture-image" role="img" aria-label="Imagen provisional de una sobremesa" style={{ backgroundImage: 'linear-gradient(180deg, rgba(81, 12, 34, .02), rgba(81, 12, 34, .18)), url("https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1700&q=90")' }}><span className="image-label">IMAGEN PROVISIONAL</span></div>
+            <div className="editorial-image culture-image" role="img" aria-label="Sobremesa" style={{ backgroundImage: 'linear-gradient(180deg, rgba(81, 12, 34, .02), rgba(81, 12, 34, .18)), url("https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1700&q=90")' }} />
             <div className="culture-copy">
               <p className="story-overline">TOKIO FRENTE A LA SOBREMESA</p>
               <p className="story-deck">A menudo, en Tokio, terminar de comer significa que ha llegado el momento de dejar libre la mesa. En buena parte del mundo hispanohablante, puede significar que la conversación apenas comienza.</p>
@@ -221,18 +221,18 @@ export default function Home() {
         <section className="detail-feature reveal">
           <div className="detail-intro"><p className="section-kicker">05 · UNA IDEA DE JAPÓN</p><h2>La belleza de cuidar los detalles</h2><p>Bien Vivos viene a mirar Tokio con pasión, pero también con los ojos abiertos. Hay gestos pequeños que aquí se convierten en una forma completa de respeto.</p></div>
           <div className="detail-layout">
-            <div className="editorial-image detail-image-main" role="img" aria-label="Imagen provisional de un detalle artesanal" style={{ backgroundImage: 'linear-gradient(180deg, rgba(47, 26, 3, .02), rgba(47, 26, 3, .14)), url("https://images.unsplash.com/photo-1490806843957-31f4c9a91c65?auto=format&fit=crop&w=1500&q=90")' }} />
+            <div className="editorial-image detail-image-main" role="img" aria-label="Detalle artesanal" style={{ backgroundImage: 'linear-gradient(180deg, rgba(47, 26, 3, .02), rgba(47, 26, 3, .14)), url("https://images.unsplash.com/photo-1490806843957-31f4c9a91c65?auto=format&fit=crop&w=1500&q=90")' }} />
             <div className="detail-quote"><span>05</span><p>La emoción también vive en la precisión, cuando la precisión nace del cuidado.</p><small>REPORTAJE EN DESARROLLO</small></div>
-            <div className="editorial-image detail-image-small" role="img" aria-label="Imagen provisional de objetos cuidadosamente presentados" style={{ backgroundImage: 'linear-gradient(180deg, rgba(47, 26, 3, .02), rgba(47, 26, 3, .15)), url("https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?auto=format&fit=crop&w=1000&q=90")' }} />
+            <div className="editorial-image detail-image-small" role="img" aria-label="Objetos cuidadosamente presentados" style={{ backgroundImage: 'linear-gradient(180deg, rgba(47, 26, 3, .02), rgba(47, 26, 3, .15)), url("https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?auto=format&fit=crop&w=1000&q=90")' }} />
           </div>
         </section>
 
         <section className="photo-essay reveal" id="foto">
           <div className="photo-essay-heading"><p className="section-kicker">06 · ENSAYO FOTOGRÁFICO</p><h2>Tokio no es gris</h2><p>Color encontrado, color inventado, color que aparece cuando la ciudad cree que nadie la está mirando.</p></div>
-          <div className="photo-grid" aria-label="Galería provisional">
+          <div className="photo-grid" aria-label="Galería fotográfica">
             {photoEssayImages.map((image, index) => (
               <figure className={`photo-tile photo-tile-${index + 1}`} key={image.src}>
-                <div role="img" aria-label={`Imagen provisional: ${image.label}`} style={{ backgroundImage: `linear-gradient(180deg, rgba(24, 9, 19, .01), rgba(24, 9, 19, .12)), url("${image.src}")` }} />
+                <div role="img" aria-label={image.label} style={{ backgroundImage: `linear-gradient(180deg, rgba(24, 9, 19, .01), rgba(24, 9, 19, .12)), url("${image.src}")` }} />
                 <figcaption><span>0{index + 1}</span>{image.label}</figcaption>
               </figure>
             ))}
