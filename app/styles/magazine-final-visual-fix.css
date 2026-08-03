@@ -1,0 +1,114 @@
+/* Final visual corrections from live laptop screenshots.
+   Adds a true nocturnal hero, removes repeated imagery, fills the guide opener,
+   and prevents browser translation from exposing the oversized night sideword. */
+
+/* True photographic hero: nightlife, movement, darker editorial color. */
+.mag-cover-media {
+  background:
+    linear-gradient(135deg, rgba(8, 16, 26, .08), rgba(8, 16, 26, .28)),
+    url("https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=2400&q=94") center 54% / cover no-repeat;
+}
+
+.mag-cover-media > img {
+  opacity: 0 !important;
+}
+
+.mag-cover-shade {
+  background:
+    linear-gradient(90deg, rgba(5, 11, 18, .72), rgba(5, 11, 18, .18) 48%, rgba(5, 11, 18, .5)),
+    linear-gradient(0deg, rgba(5, 11, 18, .82), transparent 48%, rgba(5, 11, 18, .28));
+}
+
+.mag-cover-masthead {
+  text-shadow: 0 .08em .35em rgba(0, 0, 0, .3);
+}
+
+/* The translated word “EVENINGS” was leaking out from behind the music image.
+   Remove the decorative text layer completely; the photography carries the spread. */
+.mag-night-sideword {
+  display: none !important;
+  content-visibility: hidden;
+}
+
+/* The bright Tokyo street photograph appeared in both the guide and photo essay.
+   Keep it in the guide; give the essay a distinct abstract-color frame. */
+.mag-photo-item:nth-child(2) .mag-media {
+  background:
+    linear-gradient(135deg, rgba(20, 38, 59, .04), rgba(16, 24, 32, .12)),
+    url("https://images.unsplash.com/photo-1549490349-8643362247b5?auto=format&fit=crop&w=1600&q=90") center / cover no-repeat;
+}
+
+.mag-photo-item:nth-child(2) .mag-media > img {
+  opacity: 0 !important;
+}
+
+/* Fill the guide opener with a second, quieter image panel rather than dead paper. */
+.mag-index-head {
+  position: relative;
+}
+
+@media (min-width: 900px) {
+  .mag-index-head {
+    grid-template-columns: minmax(0, 4.5fr) minmax(17rem, 4fr) minmax(13rem, 3fr);
+    align-items: end;
+    gap: clamp(1.25rem, 2.2vw, 2.4rem);
+  }
+
+  .mag-index-head::after {
+    display: block;
+    min-height: 13rem;
+    aspect-ratio: 4 / 3;
+    background:
+      linear-gradient(180deg, rgba(8, 16, 26, .04), rgba(8, 16, 26, .2)),
+      url("https://images.unsplash.com/photo-1526481280695-3c687fd643ed?auto=format&fit=crop&w=1200&q=90") center / cover no-repeat;
+    border-bottom: .5rem solid var(--mag-copper);
+    box-shadow: .8rem .8rem 0 rgba(210, 163, 58, .28);
+    content: "";
+  }
+
+  .mag-index-head > p {
+    align-self: end;
+    max-width: 34rem;
+    padding-bottom: .45rem;
+  }
+
+  .mag-index-feature {
+    margin-top: .25rem;
+  }
+}
+
+@media (min-width: 900px) and (max-width: 1399px) {
+  .mag-cover-media {
+    background-position: center 48%;
+  }
+
+  .mag-cover-masthead {
+    font-size: clamp(5.8rem, 9.6vw, 9.4rem);
+  }
+
+  .mag-index-head {
+    grid-template-columns: minmax(0, 4.2fr) minmax(15rem, 4fr) minmax(11rem, 2.8fr);
+  }
+
+  .mag-index-head::after {
+    min-height: 11.5rem;
+  }
+}
+
+@media (max-width: 899px) {
+  .mag-cover-media {
+    background-position: 58% center;
+  }
+
+  .mag-index-head::after {
+    display: block;
+    width: 100%;
+    margin-top: 1.1rem;
+    aspect-ratio: 16 / 9;
+    background:
+      linear-gradient(180deg, rgba(8, 16, 26, .03), rgba(8, 16, 26, .16)),
+      url("https://images.unsplash.com/photo-1526481280695-3c687fd643ed?auto=format&fit=crop&w=1200&q=90") center / cover no-repeat;
+    border-bottom: .38rem solid var(--mag-copper);
+    content: "";
+  }
+}
