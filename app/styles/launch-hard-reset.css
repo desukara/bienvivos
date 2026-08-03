@@ -60,6 +60,8 @@
   background-repeat: no-repeat !important;
   background-size: cover !important;
   background-blend-mode: normal !important;
+  content: "BIENVIVOS\A\A TOKIO\A NECESITA\A M\00C1S PASI\00D3N\A\A ARTE \00B7 COMIDA \00B7 M\00DASICA\A CULTURA \00B7 FOTO\A\A N\00BA 01" !important;
+  white-space: pre-line;
 }
 
 /* Override the generic view-linked .reveal animation specifically for launch. */
