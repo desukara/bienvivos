@@ -1,0 +1,73 @@
+/* Final launch-cover correction: preserve the photograph's real contrast and color. */
+.launch-note::before {
+  border-color: var(--saffron);
+  background:
+    linear-gradient(180deg,
+      rgba(10, 8, 14, .02) 0%,
+      rgba(10, 8, 14, .02) 48%,
+      rgba(10, 8, 14, .42) 72%,
+      rgba(10, 8, 14, .88) 100%),
+    url("https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=1400&q=95") center / cover no-repeat;
+  background-blend-mode: normal;
+  box-shadow:
+    1.1rem 1.35rem 0 var(--tomato),
+    1.8rem 2.2rem 3.4rem rgba(8, 8, 14, .5);
+  filter: none !important;
+  opacity: 1 !important;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform-style: preserve-3d;
+  -webkit-font-smoothing: antialiased;
+  text-shadow:
+    0 .08rem .16rem rgba(0, 0, 0, .95),
+    0 .18rem .5rem rgba(0, 0, 0, .75);
+}
+
+/* Do not place a translucent sheen over the cover. */
+.launch-note::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* Keep the cover's motion geometric only; never animate visual treatment. */
+@keyframes cover-turn-crisp {
+  from {
+    filter: none;
+    opacity: 1;
+    transform: translateY(2.5rem) rotateY(-22deg) rotateX(2deg) rotateZ(-2.5deg) scale(.96);
+  }
+  to {
+    filter: none;
+    opacity: 1;
+    transform: translateY(0) rotateY(-4deg) rotateX(.5deg) rotateZ(-1deg) scale(1);
+  }
+}
+
+@keyframes cover-float-safe {
+  0% { filter: none; opacity: 1; transform: rotateY(-4deg) rotateZ(-1deg) translateY(0); }
+  50% { filter: none; opacity: 1; transform: rotateY(0deg) rotateZ(0) translateY(-.45rem); }
+  100% { filter: none; opacity: 1; transform: rotateY(4deg) rotateZ(.8deg) translateY(0); }
+}
+
+@media (max-width: 899px) {
+  .launch-note::before {
+    background-position: 54% center;
+    box-shadow:
+      .75rem .9rem 0 var(--tomato),
+      1.1rem 1.45rem 2.3rem rgba(8, 8, 14, .46);
+  }
+}
+
+@media (max-width: 560px) {
+  .launch-note::before {
+    transform-style: flat;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .launch-note::before {
+    filter: none !important;
+    opacity: 1 !important;
+    transform: rotate(-1deg) !important;
+  }
+}
