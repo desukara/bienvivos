@@ -9,6 +9,7 @@ import "./styles/polish.css";
 import "./styles/motion.css";
 import "./styles/motion-fixes.css";
 import "./styles/editorial-balance.css";
+import "./styles/crisp-cover.css";
 
 const sans = Montserrat({
   variable: "--font-bienvivos-sans",
@@ -35,23 +36,14 @@ export const metadata: Metadata = {
   },
   description:
     "Bien Vivos es la revista de Tokio para el mundo hispanohablante. Arte, comida, música, cultura, fotografía y mucha vida.",
-  applicationName: "Bien Vivos",
-  keywords: [
-    "Bien Vivos",
-    "Tokio en español",
-    "revista de Tokio",
-    "cultura de Tokio",
-    "arte en Tokio",
-    "restaurantes españoles en Tokio",
-  ],
   openGraph: {
     type: "website",
     locale: "es_ES",
+    url: "/",
     siteName: "Bien Vivos",
     title: "Bien Vivos — Tokio se vive mejor en español",
     description:
-      "La revista de Tokio para el mundo hispanohablante. Edición inaugural: 1 de septiembre de 2026.",
-    url: "/",
+      "La revista de Tokio para el mundo hispanohablante. Arte, comida, música, cultura, fotografía y mucha vida.",
     images: [
       {
         url: "/opengraph-image",
@@ -65,12 +57,16 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Bien Vivos — Tokio se vive mejor en español",
     description:
-      "La revista de Tokio para el mundo hispanohablante. Edición inaugural: 1 de septiembre de 2026.",
+      "La revista de Tokio para el mundo hispanohablante. Arte, comida, música, cultura, fotografía y mucha vida.",
     images: ["/opengraph-image"],
   },
 };
 
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
     <html lang="es">
       <body className={`${sans.variable} ${display.variable}`}>{children}</body>
