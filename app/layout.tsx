@@ -16,6 +16,7 @@ import "./styles/masculine-palette.css";
 import "./styles/social-icons.css";
 import "./styles/magazine-home.css";
 import "./styles/magazine-qa.css";
+import "./styles/magazine-mobile-repair.css";
 
 const sans = Montserrat({
   variable: "--font-bienvivos-sans",
