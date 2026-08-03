@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 const navItems = [
@@ -20,20 +21,45 @@ const contents = [
 ];
 
 const indexStories = [
-  { page: "64", section: "BARRIOS", title: "Koenji después de las seis", copy: "Tiendas pequeñas, barras largas y una noche que todavía pertenece a sus vecinos.", image: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=700&q=85" },
-  { page: "68", section: "OBJETOS", title: "El detalle como forma de respeto", copy: "Cinco gestos japoneses que convierten lo cotidiano en algo memorable.", image: "https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?auto=format&fit=crop&w=700&q=85" },
-  { page: "72", section: "SONIDO", title: "Qué está escuchando Tokio ahora", copy: "Una lista sin complejos: pop, electrónica, guitarras y mucho volumen.", image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=700&q=85" },
-  { page: "76", section: "AGENDA", title: "Ocho razones para salir esta semana", copy: "Arte, comida y música para no dejar que Tokio se convierta en rutina.", image: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=700&q=85" },
+  { page: "64", section: "BARRIOS", title: "Koenji después de las seis", copy: "Tiendas pequeñas, barras largas y una noche que todavía pertenece a sus vecinos.", image: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1000&q=88" },
+  { page: "68", section: "OBJETOS", title: "El detalle como forma de respeto", copy: "Cinco gestos japoneses que convierten lo cotidiano en algo memorable.", image: "https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?auto=format&fit=crop&w=1000&q=88" },
+  { page: "72", section: "SONIDO", title: "Qué está escuchando Tokio ahora", copy: "Una lista sin complejos: pop, electrónica, guitarras y mucho volumen.", image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=1000&q=88" },
+  { page: "76", section: "AGENDA", title: "Ocho razones para salir esta semana", copy: "Arte, comida y música para no dejar que Tokio se convierta en rutina.", image: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1000&q=88" },
 ];
 
 const photoEssayImages = [
-  { src: "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=1400&q=90", label: "Noche eléctrica" },
-  { src: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1000&q=88", label: "Color en movimiento" },
-  { src: "https://images.unsplash.com/photo-1528360983277-13d401cdc186?auto=format&fit=crop&w=1000&q=88", label: "La ciudad despierta" },
-  { src: "https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=1000&q=88", label: "Ritmo urbano" },
-  { src: "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=1000&q=88", label: "Después del anochecer" },
-  { src: "https://images.unsplash.com/photo-1490806843957-31f4c9a91c65?auto=format&fit=crop&w=1300&q=88", label: "Tokio en flor" },
+  { src: "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=1800&q=92", label: "Noche eléctrica" },
+  { src: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1400&q=90", label: "Color en movimiento" },
+  { src: "https://images.unsplash.com/photo-1528360983277-13d401cdc186?auto=format&fit=crop&w=1400&q=90", label: "La ciudad despierta" },
+  { src: "https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=1400&q=90", label: "Ritmo urbano" },
+  { src: "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=1400&q=90", label: "Después del anochecer" },
+  { src: "https://images.unsplash.com/photo-1490806843957-31f4c9a91c65?auto=format&fit=crop&w=1800&q=90", label: "Tokio en flor" },
 ];
+
+const coverImage = "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=2400&q=95";
+
+function EditorialImage({
+  src,
+  alt,
+  sizes,
+  priority = false,
+}: {
+  src: string;
+  alt: string;
+  sizes: string;
+  priority?: boolean;
+}) {
+  return (
+    <Image
+      src={src}
+      alt={alt}
+      fill
+      sizes={sizes}
+      priority={priority}
+      quality={88}
+    />
+  );
+}
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -44,6 +70,7 @@ export default function Home() {
     if (!menuOpen) return;
 
     const previousOverflow = document.body.style.overflow;
+    const menuButton = menuButtonRef.current;
     const main = document.querySelector<HTMLElement>("main");
     const footer = document.querySelector<HTMLElement>("footer");
     document.body.style.overflow = "hidden";
@@ -61,7 +88,7 @@ export default function Home() {
       main?.removeAttribute("inert");
       footer?.removeAttribute("inert");
       window.removeEventListener("keydown", handleKeyDown);
-      menuButtonRef.current?.focus();
+      menuButton?.focus();
     };
   }, [menuOpen]);
 
@@ -133,7 +160,9 @@ export default function Home() {
 
       <main id="contenido">
         <section className="mag-cover" id="revista" aria-labelledby="cover-title">
-          <div className="mag-cover-media" role="img" aria-label="Calle nocturna de Tokio llena de luz y movimiento" />
+          <div className="mag-cover-media mag-media" aria-hidden="true">
+            <EditorialImage src={coverImage} alt="" sizes="100vw" priority />
+          </div>
           <div className="mag-cover-shade" aria-hidden="true" />
           <div className="mag-cover-grid">
             <div className="mag-cover-topline">
@@ -176,8 +205,12 @@ export default function Home() {
               <h2 id="contents-title">Todo lo que nos hace sentir vivos.</h2>
             </div>
 
-            <figure className="mag-contents-image">
-              <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1800&q=92" alt="Mesa de restaurante preparada para una comida larga" />
+            <figure className="mag-contents-image mag-media">
+              <EditorialImage
+                src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=2000&q=94"
+                alt="Mesa de restaurante preparada para una comida larga"
+                sizes="(max-width: 640px) 100vw, (max-width: 899px) 58vw, 58vw"
+              />
               <figcaption className="mag-credit">FOTO · BIEN VIVOS / TOKIO</figcaption>
             </figure>
 
@@ -200,8 +233,12 @@ export default function Home() {
           <div className="mag-rule-heading"><h2 id="front-title">PRIMERAS PÁGINAS · TOKIO AHORA</h2></div>
           <div className="mag-front-grid">
             <article className="mag-front-lead">
-              <div className="mag-front-lead-image">
-                <img src="https://images.unsplash.com/photo-1561214115-f2f134cc4912?auto=format&fit=crop&w=1500&q=90" alt="Visitantes observando una exposición de arte" />
+              <div className="mag-front-lead-image mag-media">
+                <EditorialImage
+                  src="https://images.unsplash.com/photo-1561214115-f2f134cc4912?auto=format&fit=crop&w=1800&q=92"
+                  alt="Visitantes observando una exposición de arte"
+                  sizes="(max-width: 640px) 100vw, (max-width: 899px) 58vw, 50vw"
+                />
               </div>
               <p className="mag-kicker">ARTE · MIRAR SIN PEDIR PERMISO</p>
               <h3>Una galería. Dos exposiciones. Cero indiferencia.</h3>
@@ -237,8 +274,12 @@ export default function Home() {
               <span className="mag-page-number">08</span>
             </header>
 
-            <figure className="mag-feature-image-primary">
-              <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1900&q=94" alt="Mesa de restaurante con platos y copas" />
+            <figure className="mag-feature-image-primary mag-media">
+              <EditorialImage
+                src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=2200&q=95"
+                alt="Mesa de restaurante con platos y copas"
+                sizes="(max-width: 640px) 100vw, (max-width: 899px) 58vw, 58vw"
+              />
               <figcaption className="mag-credit">FOTOGRAFÍA · BIEN VIVOS / PÁG. 08</figcaption>
             </figure>
 
@@ -267,13 +308,21 @@ export default function Home() {
               <p>Aunque a veces lo parezca. Seguimos las listas, los clubes y las obsesiones que marcan el pulso de la ciudad.</p>
             </header>
 
-            <figure className="mag-night-image-main">
-              <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=1700&q=92" alt="Cantante actuando bajo luces de concierto" />
+            <figure className="mag-night-image-main mag-media">
+              <EditorialImage
+                src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=2000&q=94"
+                alt="Cantante actuando bajo luces de concierto"
+                sizes="(max-width: 640px) 100vw, (max-width: 899px) 58vw, 58vw"
+              />
               <figcaption className="mag-credit">DIRECTO · TOKIO / PÁG. 30</figcaption>
             </figure>
 
-            <figure className="mag-night-image-small">
-              <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1200&q=90" alt="Pista de baile llena de luz y movimiento" />
+            <figure className="mag-night-image-small mag-media">
+              <EditorialImage
+                src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1500&q=92"
+                alt="Pista de baile llena de luz y movimiento"
+                sizes="(max-width: 640px) 84vw, 36vw"
+              />
               <figcaption className="mag-credit">03:17 · LA NOCHE SIGUE</figcaption>
             </figure>
           </div>
@@ -294,7 +343,9 @@ export default function Home() {
                 <strong>{story.page}</strong>
                 <div><small>{story.section}</small><h3>{story.title}</h3></div>
                 <p>{story.copy}</p>
-                <div className="mag-index-thumb"><img src={story.image} alt="" /></div>
+                <div className="mag-index-thumb mag-media" aria-hidden="true">
+                  <EditorialImage src={story.image} alt="" sizes="112px" />
+                </div>
               </article>
             ))}
           </div>
@@ -310,7 +361,13 @@ export default function Home() {
           <div className="mag-photo-grid" aria-label="Ensayo fotográfico de Tokio">
             {photoEssayImages.map((image, index) => (
               <figure className="mag-photo-item" key={image.src}>
-                <div><img src={image.src} alt={image.label} /></div>
+                <div className="mag-media">
+                  <EditorialImage
+                    src={image.src}
+                    alt={image.label}
+                    sizes={index === 0 || index === 5 ? "(max-width: 640px) 86vw, 70vw" : "(max-width: 640px) 86vw, 28vw"}
+                  />
+                </div>
                 <figcaption><span>0{index + 1}</span><span>{image.label}</span></figcaption>
               </figure>
             ))}
@@ -320,6 +377,7 @@ export default function Home() {
         <section className="mag-back-cover" aria-labelledby="launch-title">
           <div className="mag-back-inner">
             <div className="mag-mini-cover" aria-label="Vista previa de la edición inaugural de Bien Vivos">
+              <EditorialImage src={coverImage} alt="" sizes="(max-width: 640px) 70vw, 20rem" />
               <strong>BIENVIVOS</strong>
               <h3>Tokio necesita más pasión</h3>
               <p>Nº 01 · SEPTIEMBRE 2026</p>
