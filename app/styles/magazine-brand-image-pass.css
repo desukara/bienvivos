@@ -1,0 +1,396 @@
+/* Brand and visual-content pass based on real desktop/mobile screenshots.
+   Corrects the Bien Vivos wordmark, restores photographic presence, adds
+   missing editorial imagery, and makes the mobile menu independently closable. */
+
+.mag-cover-masthead,
+.mag-mobile-logo,
+.mag-mini-cover strong,
+.mag-footer-wordmark {
+  letter-spacing: -.065em;
+  word-spacing: .08em;
+}
+
+.mag-cover-media {
+  background-image: url("https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=2400&q=95");
+  background-position: center 55%;
+}
+
+.mag-cover-media > img {
+  opacity: 1;
+  object-position: center 55%;
+  filter: saturate(1.16) contrast(1.06) brightness(.92);
+}
+
+.mag-cover-shade {
+  background:
+    linear-gradient(90deg, rgba(6, 13, 20, .58), rgba(6, 13, 20, .05) 50%, rgba(6, 13, 20, .34)),
+    linear-gradient(0deg, rgba(6, 13, 20, .72), transparent 52%, rgba(6, 13, 20, .16));
+}
+
+.mag-cover::before,
+.mag-cover::after {
+  opacity: .42;
+}
+
+.mag-credit {
+  padding: .36rem .48rem;
+  font-size: .52rem;
+  letter-spacing: .12em;
+}
+
+.mag-contents-image {
+  background-image:
+    linear-gradient(135deg, rgba(20, 38, 59, .04), rgba(16, 24, 32, .15)),
+    url("https://images.unsplash.com/photo-1528360983277-13d401cdc186?auto=format&fit=crop&w=1600&q=86");
+  background-position: center;
+  background-size: cover;
+}
+
+.mag-contents-image::after {
+  display: none;
+  content: none;
+}
+
+.mag-feature-image-detail,
+.mag-index-feature {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.mag-feature-image-detail {
+  background-image:
+    linear-gradient(135deg, rgba(20, 38, 59, .04), rgba(16, 24, 32, .12)),
+    url("https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1400&q=86");
+  background-position: center;
+  background-size: cover;
+}
+
+.mag-feature-image-detail img {
+  object-position: center 52%;
+}
+
+.mag-index-feature {
+  width: 100%;
+  background-image:
+    linear-gradient(135deg, rgba(20, 38, 59, .08), rgba(16, 24, 32, .18)),
+    url("https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=2000&q=88");
+  background-position: center;
+  background-size: cover;
+}
+
+.mag-index-feature img {
+  object-position: center 52%;
+  transition: transform .8s cubic-bezier(.16, 1, .3, 1);
+}
+
+.mag-index-feature:hover img {
+  transform: scale(1.025);
+}
+
+.mag-index-feature figcaption {
+  position: absolute;
+  right: clamp(1rem, 2vw, 2rem);
+  bottom: clamp(1rem, 2vw, 2rem);
+  z-index: 3;
+  display: grid;
+  width: min(31rem, calc(100% - 2rem));
+  gap: .5rem;
+  padding: clamp(1rem, 2vw, 1.6rem);
+  color: var(--mag-white);
+  background: rgba(16, 24, 32, .88);
+  border-left: .45rem solid var(--mag-ochre);
+  backdrop-filter: blur(9px);
+}
+
+.mag-index-feature figcaption strong {
+  font-family: var(--font-bienvivos-display), Georgia, serif;
+  font-size: clamp(1.65rem, 2.5vw, 2.8rem);
+  font-weight: 600;
+  letter-spacing: -.03em;
+  line-height: .95;
+}
+
+.mag-mobile-menu-close {
+  display: none;
+}
+
+@media (min-width: 900px) {
+  .mag-cover {
+    min-height: max(43rem, calc(100svh - 5.35rem));
+  }
+
+  .mag-cover-grid {
+    min-height: max(43rem, calc(100svh - 5.35rem));
+  }
+
+  .mag-cover-masthead {
+    font-size: clamp(6.4rem, 10.8vw, 10.8rem);
+    line-height: .73;
+  }
+
+  .mag-cover-story h1 {
+    font-size: clamp(4.5rem, 6.7vw, 7rem);
+  }
+
+  .mag-footer-wordmark {
+    margin-top: clamp(2.5rem, 4vw, 4rem);
+    font-size: clamp(5.2rem, 10vw, 10rem);
+  }
+
+  .mag-feature-grid {
+    grid-template-rows: auto auto auto;
+    align-items: start;
+  }
+
+  .mag-feature-heading {
+    grid-column: 1 / 9;
+    grid-row: 1;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-rows: auto auto;
+    align-items: end;
+    gap: .65rem 1rem;
+    margin: 0;
+    padding-right: clamp(.5rem, 1.4vw, 1.25rem);
+  }
+
+  .mag-feature-heading .mag-kicker {
+    grid-column: 1;
+    grid-row: 1;
+    margin: 0;
+  }
+
+  .mag-feature-heading h2 {
+    grid-column: 1;
+    grid-row: 2;
+    max-width: 8.5ch;
+    font-size: clamp(4.2rem, 5.7vw, 6rem);
+    line-height: .82;
+  }
+
+  .mag-feature-heading .mag-page-number {
+    grid-column: 2;
+    grid-row: 1 / 3;
+    align-self: end;
+    justify-self: end;
+    font-size: clamp(4.5rem, 6vw, 6.3rem);
+  }
+
+  .mag-feature-image-detail {
+    grid-column: 9 / 13;
+    grid-row: 1;
+    width: 100%;
+    height: clamp(15rem, 18vw, 18.5rem);
+    min-height: 0;
+    margin: 0;
+  }
+
+  .mag-feature-image-primary {
+    grid-column: 1 / 7;
+    grid-row: 2;
+    height: clamp(30rem, 37vw, 35rem);
+  }
+
+  .mag-feature-copy {
+    grid-column: 7 / 13;
+    grid-row: 2;
+    align-self: center;
+    padding-left: clamp(.75rem, 1.6vw, 1.6rem);
+  }
+
+  .mag-feature-pullquote {
+    grid-column: 3 / 12;
+    grid-row: 3;
+    margin-top: 1.8rem;
+  }
+
+  .mag-index-head {
+    grid-template-columns: minmax(0, 5fr) minmax(20rem, 7fr);
+    margin-bottom: clamp(1.5rem, 2.2vw, 2.2rem);
+  }
+
+  .mag-index-head h2 {
+    max-width: 7.2ch;
+  }
+
+  .mag-index-feature {
+    height: clamp(17rem, 24vw, 24rem);
+    margin-bottom: clamp(2rem, 3vw, 3rem);
+  }
+}
+
+@media (min-width: 900px) and (max-width: 1399px) {
+  .mag-cover-story {
+    grid-column: 1 / 7;
+  }
+
+  .mag-cover-lines {
+    grid-column: 7 / 13;
+  }
+
+  .mag-feature-heading h2 {
+    font-size: clamp(3.9rem, 5.2vw, 5.3rem);
+  }
+
+  .mag-feature-image-detail {
+    height: clamp(14rem, 17vw, 16.5rem);
+  }
+}
+
+@media (max-width: 899px) {
+  .mag-header {
+    z-index: 300;
+  }
+
+  .mag-mobile-bar {
+    z-index: 320;
+  }
+
+  .mag-mobile-logo {
+    font-size: 1.45rem;
+    white-space: nowrap;
+  }
+
+  .mag-mobile-menu {
+    z-index: 280;
+    justify-content: flex-start;
+    padding-top: 7.25rem;
+    overflow-y: auto;
+  }
+
+  .mag-mobile-menu-close {
+    position: absolute;
+    top: 5.05rem;
+    right: 1rem;
+    z-index: 3;
+    display: inline-flex;
+    align-items: center;
+    gap: .55rem;
+    padding: .62rem .78rem;
+    color: var(--mag-white);
+    background: rgba(16, 24, 32, .82);
+    border: 1px solid rgba(255, 250, 243, .72);
+    font-family: var(--font-bienvivos-sans), Arial, sans-serif;
+    font-size: .62rem;
+    font-weight: 850;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+    backdrop-filter: blur(8px);
+  }
+
+  .mag-mobile-menu-close span {
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: .7;
+  }
+
+  .mag-cover-media > img {
+    object-position: 56% center;
+    filter: saturate(1.16) contrast(1.06) brightness(.88);
+  }
+
+  .mag-cover-shade {
+    background:
+      linear-gradient(90deg, rgba(6, 13, 20, .54), rgba(6, 13, 20, .08) 68%),
+      linear-gradient(0deg, rgba(6, 13, 20, .78), transparent 58%, rgba(6, 13, 20, .18));
+  }
+
+  .mag-cover-masthead {
+    font-size: clamp(3.5rem, 14vw, 6.6rem);
+    white-space: nowrap;
+  }
+
+  .mag-feature-grid {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mag-feature-heading {
+    order: 1;
+  }
+
+  .mag-feature-image-primary {
+    order: 2;
+  }
+
+  .mag-feature-image-detail {
+    order: 3;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 16 / 10;
+  }
+
+  .mag-feature-copy {
+    order: 4;
+  }
+
+  .mag-feature-pullquote {
+    order: 5;
+  }
+
+  .mag-index-feature {
+    height: auto;
+    min-height: 0;
+    margin-bottom: 2rem;
+    aspect-ratio: 16 / 10;
+  }
+
+  .mag-index-feature figcaption {
+    right: .8rem;
+    bottom: .8rem;
+    width: min(28rem, calc(100% - 1.6rem));
+  }
+
+  .mag-footer-wordmark {
+    font-size: clamp(3.5rem, 14vw, 6.4rem);
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 640px) {
+  .mag-mobile-menu {
+    padding-top: 6.8rem;
+  }
+
+  .mag-mobile-menu-close {
+    top: 4.85rem;
+  }
+
+  .mag-mobile-menu a {
+    font-size: clamp(2.8rem, 12.8vw, 4.4rem);
+  }
+
+  .mag-cover-masthead {
+    font-size: clamp(3.1rem, 13.5vw, 4.8rem);
+  }
+
+  .mag-cover-story h1 {
+    font-size: clamp(3.45rem, 15.4vw, 5.25rem);
+  }
+
+  .mag-feature-image-detail,
+  .mag-index-feature {
+    aspect-ratio: 4 / 3;
+  }
+
+  .mag-index-feature figcaption {
+    gap: .35rem;
+    padding: .85rem;
+    border-left-width: .32rem;
+  }
+
+  .mag-index-feature figcaption strong {
+    font-size: clamp(1.35rem, 6vw, 1.75rem);
+  }
+
+  .mag-mini-cover strong {
+    font-size: clamp(1.7rem, 8.5vw, 2.4rem);
+    white-space: nowrap;
+  }
+
+  .mag-footer-wordmark {
+    font-size: clamp(3.25rem, 13.3vw, 5rem);
+  }
+}
