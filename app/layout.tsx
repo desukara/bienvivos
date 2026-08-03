@@ -8,6 +8,7 @@ import "./styles/responsive.css";
 import "./styles/polish.css";
 import "./styles/motion.css";
 import "./styles/motion-fixes.css";
+import "./styles/editorial-balance.css";
 
 const sans = Montserrat({
   variable: "--font-bienvivos-sans",
