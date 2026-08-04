@@ -1,0 +1,128 @@
+/* Final Bien Vivos cover art direction */
+.mag-cover-media img,
+.mag-mini-cover img {
+  object-fit: cover !important;
+}
+
+.mag-cover-media img {
+  object-position: 58% center !important;
+  filter: saturate(1.06) contrast(1.05) brightness(.92);
+  transform: scale(1.015);
+}
+
+.mag-cover-shade {
+  background:
+    linear-gradient(90deg, rgba(12, 5, 7, .92) 0%, rgba(18, 7, 8, .72) 29%, rgba(18, 7, 8, .28) 54%, rgba(12, 5, 7, .18) 72%, rgba(12, 5, 7, .42) 100%),
+    linear-gradient(180deg, rgba(20, 7, 9, .36) 0%, rgba(20, 7, 9, .04) 38%, rgba(91, 17, 38, .5) 100%) !important;
+}
+
+.mag-cover-grid {
+  z-index: 4;
+}
+
+.mag-cover-masthead,
+.mag-cover-story,
+.mag-cover-lines,
+.mag-cover-topline,
+.mag-cover-vertical {
+  text-shadow: 0 2px 22px rgba(0, 0, 0, .68);
+}
+
+.mag-cover-story {
+  max-width: min(46rem, 48vw);
+}
+
+.mag-cover-story h1 {
+  max-width: 8.7ch !important;
+  text-wrap: balance;
+}
+
+.mag-cover-story > p:last-child {
+  max-width: 31rem !important;
+  background: linear-gradient(90deg, rgba(18, 7, 8, .48), transparent);
+  padding-top: .45rem;
+  padding-bottom: .45rem;
+  padding-right: 1rem;
+}
+
+.mag-cover-lines {
+  background: linear-gradient(90deg, rgba(18, 7, 8, .55), rgba(18, 7, 8, .12));
+  backdrop-filter: blur(2px);
+}
+
+.mag-mini-cover img {
+  object-position: 63% center !important;
+  filter: saturate(1.08) contrast(1.08) brightness(.88);
+}
+
+@media (min-width: 900px) {
+  .mag-cover {
+    min-height: calc(100svh - 5rem);
+  }
+
+  .mag-cover-story {
+    margin-left: clamp(.2rem, 1vw, 1rem);
+  }
+}
+
+@media (max-width: 899px) {
+  .mag-cover {
+    min-height: 100svh !important;
+  }
+
+  .mag-cover-media img {
+    object-position: 70% center !important;
+    filter: saturate(1.05) contrast(1.06) brightness(.82);
+    transform: scale(1.08);
+  }
+
+  .mag-cover-shade {
+    background:
+      linear-gradient(180deg, rgba(10, 4, 6, .48) 0%, rgba(10, 4, 6, .12) 20%, rgba(10, 4, 6, .54) 58%, rgba(10, 4, 6, .9) 100%),
+      linear-gradient(90deg, rgba(10, 4, 6, .78) 0%, rgba(10, 4, 6, .48) 54%, rgba(10, 4, 6, .2) 100%) !important;
+  }
+
+  .mag-cover-story {
+    max-width: 30rem;
+  }
+
+  .mag-cover-story h1 {
+    max-width: 8.2ch !important;
+  }
+
+  .mag-cover-story > p:last-child {
+    max-width: 25rem !important;
+    background: rgba(14, 5, 8, .38);
+    backdrop-filter: blur(3px);
+  }
+
+  .mag-cover-lines {
+    background: rgba(14, 5, 8, .48);
+    backdrop-filter: blur(4px);
+  }
+}
+
+@media (max-width: 640px) {
+  .mag-cover-media img {
+    object-position: 73% center !important;
+    transform: scale(1.13);
+  }
+
+  .mag-cover-masthead {
+    font-size: clamp(3.55rem, 17.5vw, 5.7rem) !important;
+    line-height: .78 !important;
+  }
+
+  .mag-cover-story h1 {
+    font-size: clamp(3.1rem, 14vw, 5rem) !important;
+    max-width: 8ch !important;
+  }
+
+  .mag-cover-story > p:last-child {
+    max-width: 20rem !important;
+  }
+
+  .mag-cover-lines {
+    border-top: 1px solid rgba(255, 249, 238, .38);
+  }
+}
