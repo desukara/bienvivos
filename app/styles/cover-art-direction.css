@@ -97,6 +97,42 @@
   filter: saturate(1.12) contrast(1.08) brightness(.84) !important;
 }
 
+/* The issue rail immediately above the hero: rich Spanish wine, readable lettering. */
+.mag-header-rail {
+  color: #fff4df !important;
+  background:
+    linear-gradient(90deg, #260b14 0%, #4f1025 48%, #260b14 100%) !important;
+  border-bottom: 1px solid rgba(242, 173, 0, .7) !important;
+  box-shadow: inset 0 -1px 0 rgba(255, 244, 223, .08) !important;
+}
+
+.mag-header-rail p {
+  color: #fff4df !important;
+  opacity: 1 !important;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, .72) !important;
+}
+
+.mag-header-rail p:nth-child(2) {
+  color: #f2ad00 !important;
+}
+
+.mag-header-main {
+  color: #fff4df !important;
+  background: #180b0b !important;
+  border-bottom-color: rgba(242, 173, 0, .55) !important;
+}
+
+.mag-header-main .mag-header-note,
+.mag-header-main .mag-header-wordmark {
+  color: #fff4df !important;
+  opacity: 1 !important;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, .7) !important;
+}
+
+.mag-header-main .mag-header-note:first-child {
+  color: #f2ad00 !important;
+}
+
 @media (min-width: 900px) {
   .mag-cover { min-height: calc(100svh - 5rem); }
   .mag-cover-story { margin-left: clamp(.2rem, 1vw, 1rem); }
