@@ -1,0 +1,88 @@
+/* Source-led correction after production verification. */
+
+.mag-cover-media > img {
+  opacity: 1 !important;
+  object-position: 50% 54% !important;
+  filter: saturate(1.12) contrast(1.08) brightness(.72) !important;
+}
+
+.mag-cover-shade {
+  background:
+    linear-gradient(90deg, rgba(4, 10, 17, .76), rgba(4, 10, 17, .18) 52%, rgba(4, 10, 17, .54)),
+    linear-gradient(0deg, rgba(4, 10, 17, .86), transparent 48%, rgba(4, 10, 17, .34)) !important;
+}
+
+.mag-index-feature {
+  width: 100%;
+  height: auto !important;
+  min-height: 0 !important;
+  aspect-ratio: 16 / 8.5;
+  margin: 0 0 clamp(2rem, 3vw, 3rem) !important;
+  background: #192633;
+}
+
+.mag-index-feature > img {
+  opacity: 1 !important;
+  object-position: center 52% !important;
+}
+
+@media (max-width: 899px) {
+  .mag-header {
+    z-index: 1200 !important;
+  }
+
+  .mag-mobile-bar {
+    position: sticky;
+    z-index: 1300 !important;
+  }
+
+  .mag-menu-button {
+    z-index: 1400 !important;
+    pointer-events: auto !important;
+  }
+
+  .mag-mobile-menu {
+    z-index: 1100 !important;
+    padding-top: 7.4rem !important;
+    pointer-events: none;
+  }
+
+  .mag-mobile-menu.is-open {
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    transform: none !important;
+  }
+
+  .mag-mobile-menu-close {
+    position: fixed !important;
+    top: 4.8rem !important;
+    right: 1rem !important;
+    z-index: 1500 !important;
+    display: inline-flex !important;
+    min-width: 7.25rem;
+    min-height: 2.8rem;
+    align-items: center;
+    justify-content: center;
+    pointer-events: auto !important;
+    touch-action: manipulation;
+  }
+
+  .mag-index-feature {
+    aspect-ratio: 4 / 3;
+  }
+}
+
+@media (max-width: 640px) {
+  .mag-mobile-menu {
+    padding-top: 7rem !important;
+  }
+
+  .mag-mobile-menu-close {
+    top: 4.65rem !important;
+  }
+
+  .mag-cover-media > img {
+    object-position: 56% center !important;
+  }
+}
