@@ -23,6 +23,7 @@ import "./styles/magazine-brand-image-pass.css";
 import "./styles/magazine-final-visual-fix.css";
 import "./styles/live-image-menu-correction.css";
 import "./styles/mobile-menu-single-close.css";
+import "./styles/mobile-menu-overlap-fix.css";
 
 const sans = Montserrat({
   variable: "--font-bienvivos-sans",
