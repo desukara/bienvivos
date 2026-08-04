@@ -1,23 +1,66 @@
-/* Final Bien Vivos cover art direction */
+/* Final Bien Vivos cover art direction — photographic cover must remain visible */
+.mag-cover {
+  position: relative !important;
+  overflow: hidden !important;
+  background: #12080b !important;
+}
+
+.mag-cover::before {
+  display: none !important;
+  content: none !important;
+}
+
+.mag-cover-media {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 0 !important;
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  background: transparent !important;
+}
+
+.mag-cover-media::before,
+.mag-cover-media::after {
+  display: none !important;
+  content: none !important;
+}
+
 .mag-cover-media img,
 .mag-mini-cover img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  opacity: 1 !important;
+  visibility: visible !important;
   object-fit: cover !important;
 }
 
 .mag-cover-media img {
   object-position: 58% center !important;
-  filter: saturate(1.06) contrast(1.05) brightness(.92);
-  transform: scale(1.015);
+  filter: saturate(1.14) contrast(1.08) brightness(.82) !important;
+  transform: scale(1.02) !important;
 }
 
 .mag-cover-shade {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 1 !important;
+  pointer-events: none !important;
+  opacity: 1 !important;
   background:
-    linear-gradient(90deg, rgba(12, 5, 7, .92) 0%, rgba(18, 7, 8, .72) 29%, rgba(18, 7, 8, .28) 54%, rgba(12, 5, 7, .18) 72%, rgba(12, 5, 7, .42) 100%),
-    linear-gradient(180deg, rgba(20, 7, 9, .36) 0%, rgba(20, 7, 9, .04) 38%, rgba(91, 17, 38, .5) 100%) !important;
+    linear-gradient(90deg, rgba(12, 5, 7, .9) 0%, rgba(18, 7, 8, .7) 30%, rgba(18, 7, 8, .26) 56%, rgba(12, 5, 7, .14) 74%, rgba(12, 5, 7, .38) 100%),
+    linear-gradient(180deg, rgba(20, 7, 9, .32) 0%, rgba(20, 7, 9, .04) 38%, rgba(91, 17, 38, .52) 100%) !important;
 }
 
 .mag-cover-grid {
-  z-index: 4;
+  position: relative !important;
+  z-index: 4 !important;
+}
+
+.mag-cover-vertical,
+.mag-cover-barcode {
+  z-index: 5 !important;
 }
 
 .mag-cover-masthead,
@@ -25,7 +68,7 @@
 .mag-cover-lines,
 .mag-cover-topline,
 .mag-cover-vertical {
-  text-shadow: 0 2px 22px rgba(0, 0, 0, .68);
+  text-shadow: 0 2px 22px rgba(0, 0, 0, .78);
 }
 
 .mag-cover-story {
@@ -39,73 +82,60 @@
 
 .mag-cover-story > p:last-child {
   max-width: 31rem !important;
-  background: linear-gradient(90deg, rgba(18, 7, 8, .48), transparent);
-  padding-top: .45rem;
-  padding-bottom: .45rem;
-  padding-right: 1rem;
+  padding: .55rem 1rem .55rem 1rem;
+  background: linear-gradient(90deg, rgba(18, 7, 8, .68), rgba(18, 7, 8, .08));
+  backdrop-filter: blur(2px);
 }
 
 .mag-cover-lines {
-  background: linear-gradient(90deg, rgba(18, 7, 8, .55), rgba(18, 7, 8, .12));
-  backdrop-filter: blur(2px);
+  background: linear-gradient(90deg, rgba(18, 7, 8, .68), rgba(18, 7, 8, .12));
+  backdrop-filter: blur(3px);
 }
 
 .mag-mini-cover img {
   object-position: 63% center !important;
-  filter: saturate(1.08) contrast(1.08) brightness(.88);
+  filter: saturate(1.12) contrast(1.08) brightness(.84) !important;
 }
 
 @media (min-width: 900px) {
-  .mag-cover {
-    min-height: calc(100svh - 5rem);
-  }
-
-  .mag-cover-story {
-    margin-left: clamp(.2rem, 1vw, 1rem);
-  }
+  .mag-cover { min-height: calc(100svh - 5rem); }
+  .mag-cover-story { margin-left: clamp(.2rem, 1vw, 1rem); }
 }
 
 @media (max-width: 899px) {
-  .mag-cover {
-    min-height: 100svh !important;
-  }
+  .mag-cover { min-height: 100svh !important; }
 
   .mag-cover-media img {
-    object-position: 70% center !important;
-    filter: saturate(1.05) contrast(1.06) brightness(.82);
-    transform: scale(1.08);
+    object-position: 68% center !important;
+    filter: saturate(1.12) contrast(1.08) brightness(.72) !important;
+    transform: scale(1.08) !important;
   }
 
   .mag-cover-shade {
     background:
-      linear-gradient(180deg, rgba(10, 4, 6, .48) 0%, rgba(10, 4, 6, .12) 20%, rgba(10, 4, 6, .54) 58%, rgba(10, 4, 6, .9) 100%),
-      linear-gradient(90deg, rgba(10, 4, 6, .78) 0%, rgba(10, 4, 6, .48) 54%, rgba(10, 4, 6, .2) 100%) !important;
+      linear-gradient(180deg, rgba(10, 4, 6, .42) 0%, rgba(10, 4, 6, .08) 20%, rgba(10, 4, 6, .5) 58%, rgba(10, 4, 6, .9) 100%),
+      linear-gradient(90deg, rgba(10, 4, 6, .72) 0%, rgba(10, 4, 6, .46) 54%, rgba(10, 4, 6, .12) 100%) !important;
   }
 
-  .mag-cover-story {
-    max-width: 30rem;
-  }
-
-  .mag-cover-story h1 {
-    max-width: 8.2ch !important;
-  }
+  .mag-cover-story { max-width: 30rem; }
+  .mag-cover-story h1 { max-width: 8.2ch !important; }
 
   .mag-cover-story > p:last-child {
     max-width: 25rem !important;
-    background: rgba(14, 5, 8, .38);
-    backdrop-filter: blur(3px);
+    background: rgba(14, 5, 8, .58);
+    backdrop-filter: blur(4px);
   }
 
   .mag-cover-lines {
-    background: rgba(14, 5, 8, .48);
-    backdrop-filter: blur(4px);
+    background: rgba(14, 5, 8, .58);
+    backdrop-filter: blur(5px);
   }
 }
 
 @media (max-width: 640px) {
   .mag-cover-media img {
-    object-position: 73% center !important;
-    transform: scale(1.13);
+    object-position: 66% center !important;
+    transform: scale(1.12) !important;
   }
 
   .mag-cover-masthead {
@@ -118,11 +148,6 @@
     max-width: 8ch !important;
   }
 
-  .mag-cover-story > p:last-child {
-    max-width: 20rem !important;
-  }
-
-  .mag-cover-lines {
-    border-top: 1px solid rgba(255, 249, 238, .38);
-  }
+  .mag-cover-story > p:last-child { max-width: 20rem !important; }
+  .mag-cover-lines { border-top: 1px solid rgba(255, 249, 238, .38); }
 }
