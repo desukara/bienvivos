@@ -1,0 +1,17 @@
+@media (max-width: 899px) {
+  .mag-mobile-menu {
+    box-sizing: border-box;
+    padding-top: clamp(5.5rem, 18vw, 7rem) !important;
+    overflow-y: auto !important;
+    overscroll-behavior: contain;
+  }
+
+  .mag-mobile-menu nav {
+    margin-top: 0 !important;
+    padding-top: 0.5rem;
+  }
+
+  .mag-mobile-menu nav a:first-child {
+    margin-top: 0 !important;
+  }
+}
