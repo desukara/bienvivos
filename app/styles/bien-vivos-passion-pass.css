@@ -1,0 +1,407 @@
+/* Bien Vivos — Spanish passion visual refinement
+   Tokyo seen through a Spanish lens: red, saffron, wine, terracotta, ink and cobalt.
+   Loaded last so it can unify the accumulated launch styles without rebuilding the page. */
+
+:root {
+  --bv-ink: #180b0b;
+  --bv-paper: #fff3dc;
+  --bv-cream: #f7dfb8;
+  --bv-red: #c71920;
+  --bv-red-hot: #e32b22;
+  --bv-saffron: #f2ad00;
+  --bv-terracotta: #b94a2e;
+  --bv-wine: #5b1126;
+  --bv-cobalt: #1745a3;
+  --bv-night: #120b16;
+  --bv-white: #fff9ee;
+}
+
+html { scroll-padding-top: 5rem; }
+body { background: var(--bv-paper); }
+
+.mag-page {
+  color: var(--bv-ink);
+  background:
+    radial-gradient(circle at 12% 18%, rgba(242, 173, 0, .08), transparent 24rem),
+    linear-gradient(180deg, var(--bv-paper), #fff8eb 42%, var(--bv-paper));
+}
+
+/* A disciplined Spanish palette: passionate, not rainbow. */
+.mag-kicker,
+.mag-contents-entry small,
+.mag-index-row small,
+.mag-cover-line small,
+.mag-credit {
+  color: var(--bv-red);
+}
+
+.mag-rule-heading,
+.mag-contents-entry,
+.mag-index-row,
+.mag-footer-links,
+.mag-footer-bottom {
+  border-color: rgba(24, 11, 11, .32);
+}
+
+/* Sticky editorial navigation, visibly useful without pretending there are extra pages. */
+@media (min-width: 900px) {
+  .mag-header {
+    position: sticky;
+    top: 0;
+    z-index: 80;
+    box-shadow: 0 1px 0 rgba(255, 249, 238, .18);
+  }
+
+  .mag-nav {
+    background: rgba(24, 11, 11, .96);
+    backdrop-filter: blur(14px);
+  }
+
+  .mag-nav-links a {
+    position: relative;
+    transition: color 180ms ease, transform 180ms ease;
+  }
+
+  .mag-nav-links a::after {
+    position: absolute;
+    right: 0;
+    bottom: -.5rem;
+    left: 0;
+    height: .22rem;
+    background: var(--bv-saffron);
+    content: "";
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 180ms ease;
+  }
+
+  .mag-nav-links a:hover,
+  .mag-nav-links a:focus-visible {
+    color: var(--bv-saffron);
+    transform: translateY(-1px);
+  }
+
+  .mag-nav-links a:hover::after,
+  .mag-nav-links a:focus-visible::after { transform: scaleX(1); }
+}
+
+/* Cover: more life, clearer invitation, still unmistakably a magazine cover. */
+.mag-cover-shade {
+  background:
+    linear-gradient(90deg, rgba(18, 7, 8, .82) 0%, rgba(18, 7, 8, .28) 48%, rgba(18, 7, 8, .5) 100%),
+    linear-gradient(180deg, rgba(199, 25, 32, .14), transparent 42%, rgba(91, 17, 38, .36));
+}
+
+.mag-cover::after {
+  position: absolute;
+  right: clamp(1rem, 3vw, 3.5rem);
+  bottom: clamp(1rem, 2vw, 2rem);
+  z-index: 6;
+  padding: .7rem .9rem;
+  border: 1px solid rgba(255, 249, 238, .8);
+  color: var(--bv-white);
+  background: rgba(24, 11, 11, .6);
+  content: "DESCUBRIR LA EDICIÓN ↓";
+  font-size: .62rem;
+  font-weight: 850;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  backdrop-filter: blur(8px);
+}
+
+.mag-cover-masthead {
+  color: var(--bv-white);
+  text-shadow: 0 .04em 0 rgba(199, 25, 32, .75), 0 .08em 1.4rem rgba(0, 0, 0, .22);
+}
+
+.mag-cover-story em { color: var(--bv-saffron); }
+.mag-cover-story h1 { max-width: 10ch; }
+.mag-cover-story > p:last-child {
+  max-width: 34rem;
+  border-left: .35rem solid var(--bv-red-hot);
+  padding-left: 1rem;
+}
+
+.mag-cover-line {
+  transition: background 180ms ease, transform 180ms ease;
+}
+.mag-cover-line:hover {
+  background: rgba(199, 25, 32, .18);
+  transform: translateX(.25rem);
+}
+.mag-cover-line b { color: var(--bv-saffron); }
+
+/* Better rhythm: loud showpieces, calmer editorial bridges. */
+.mag-section { isolation: isolate; }
+.mag-contents,
+.mag-front,
+.mag-index {
+  padding-top: clamp(4rem, 6.5vw, 7rem);
+  padding-bottom: clamp(4rem, 6.5vw, 7rem);
+}
+
+.mag-contents { background: var(--bv-paper); }
+.mag-front {
+  background:
+    linear-gradient(135deg, rgba(242, 173, 0, .16), transparent 32%),
+    var(--bv-cream);
+}
+.mag-index {
+  background:
+    linear-gradient(90deg, var(--bv-red) 0 .42rem, transparent .42rem),
+    #fff8e9;
+}
+
+.mag-contents-title h2,
+.mag-index-head h2,
+.mag-photo-head h2,
+.mag-back-copy h2 {
+  text-wrap: balance;
+}
+
+.mag-contents-title h2,
+.mag-index-head h2 { max-width: 11ch; }
+
+.mag-contents-entry {
+  padding-block: clamp(1rem, 1.6vw, 1.5rem);
+}
+.mag-contents-entry strong { color: var(--bv-red); }
+.mag-contents-entry h3,
+.mag-index-row h3 { line-height: 1.02; }
+.mag-contents-entry p,
+.mag-index-row > p,
+.mag-front-lead > p:last-child,
+.mag-night-heading > p:last-child,
+.mag-back-copy > p {
+  max-width: 56ch;
+  line-height: 1.65;
+}
+
+/* Reduce fake click signals on cards that do not open yet. */
+.mag-front-card span {
+  font-size: 0;
+}
+.mag-front-card span::after {
+  content: "PRÓXIMAMENTE";
+  font-size: .58rem;
+  font-weight: 850;
+  letter-spacing: .13em;
+}
+.mag-front-card {
+  cursor: default;
+  border-top-color: var(--bv-red);
+}
+.mag-front-card:nth-child(1) { background: var(--bv-saffron); }
+.mag-front-card:nth-child(2) {
+  color: var(--bv-white);
+  background: var(--bv-wine);
+}
+
+.mag-front-quote {
+  color: var(--bv-white);
+  background: var(--bv-cobalt);
+  box-shadow: .75rem .75rem 0 var(--bv-red);
+}
+.mag-front-quote b { color: var(--bv-saffron); }
+
+/* Main feature: warmer Spanish dining-room energy and more readable screen typography. */
+.mag-feature {
+  color: var(--bv-white);
+  background:
+    radial-gradient(circle at 82% 14%, rgba(242, 173, 0, .22), transparent 28rem),
+    linear-gradient(135deg, var(--bv-wine), #2a0b17 70%);
+}
+.mag-feature-heading h2 { text-wrap: balance; }
+.mag-feature-heading .mag-kicker,
+.mag-feature .mag-credit { color: var(--bv-saffron); }
+.mag-page-number {
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 249, 238, .42);
+}
+.mag-deck { color: var(--bv-saffron); }
+.mag-feature-columns {
+  max-width: 68ch;
+  columns: 1 !important;
+  font-size: clamp(1rem, 1.12vw, 1.12rem);
+  line-height: 1.82;
+}
+.mag-feature-pullquote {
+  border-left: .5rem solid var(--bv-saffron);
+  color: var(--bv-white);
+  background: rgba(199, 25, 32, .36);
+}
+
+.mag-passion-strip {
+  color: var(--bv-ink);
+  background: var(--bv-saffron);
+  border-top: .45rem solid var(--bv-red);
+  border-bottom: .45rem solid var(--bv-red);
+}
+.mag-passion-strip em { color: var(--bv-red); }
+
+/* Night section: Tokyo electricity through Spanish color rather than generic black. */
+.mag-night {
+  background:
+    linear-gradient(130deg, rgba(23, 69, 163, .42), transparent 45%),
+    radial-gradient(circle at 80% 30%, rgba(199, 25, 32, .3), transparent 30rem),
+    var(--bv-night);
+}
+.mag-night .mag-kicker { color: var(--bv-saffron); }
+.mag-night-sideword {
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(242, 173, 0, .36);
+}
+.mag-night-heading h2 { text-wrap: balance; }
+
+/* Photo essay remains a showpiece, with a strong Spanish-red editorial frame. */
+.mag-photo {
+  color: var(--bv-white);
+  background: var(--bv-red);
+}
+.mag-photo .mag-kicker { color: var(--bv-saffron); }
+.mag-photo-item figcaption {
+  color: var(--bv-ink);
+  background: var(--bv-saffron);
+}
+.mag-photo-item:nth-child(3n + 2) figcaption {
+  color: var(--bv-white);
+  background: var(--bv-cobalt);
+}
+.mag-photo-item:nth-child(3n) figcaption {
+  color: var(--bv-white);
+  background: var(--bv-wine);
+}
+
+/* Back cover and footer: an ending, not a utility drawer. */
+.mag-back-cover {
+  background:
+    linear-gradient(120deg, rgba(242, 173, 0, .18), transparent 30%),
+    var(--bv-cobalt);
+}
+.mag-mini-cover { box-shadow: 1rem 1rem 0 var(--bv-saffron); }
+.mag-back-copy .mag-kicker { color: var(--bv-saffron); }
+
+.mag-footer {
+  color: var(--bv-white);
+  background:
+    radial-gradient(circle at 80% 0%, rgba(199, 25, 32, .42), transparent 30rem),
+    var(--bv-ink);
+  border-top: .6rem solid var(--bv-saffron);
+}
+.mag-footer-top h2 { max-width: 10ch; }
+.mag-newsletter {
+  position: relative;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 249, 238, .32);
+  background: rgba(91, 17, 38, .48);
+}
+.mag-newsletter::after {
+  display: block;
+  width: fit-content;
+  margin-top: 1.25rem;
+  padding: .7rem .9rem;
+  color: var(--bv-ink);
+  background: var(--bv-saffron);
+  content: "SUSCRIPCIONES · PRÓXIMAMENTE";
+  font-size: .6rem;
+  font-weight: 850;
+  letter-spacing: .13em;
+}
+.social-placeholder span {
+  opacity: .66;
+}
+.social-placeholder span::after {
+  margin-left: .4rem;
+  color: var(--bv-saffron);
+  content: "· PRONTO";
+  font-size: .55rem;
+}
+.mag-footer-wordmark {
+  color: var(--bv-white);
+  text-shadow: .025em .025em 0 var(--bv-red), .05em .05em 0 var(--bv-saffron);
+}
+
+/* Make real one-page interactions obvious and accessible. */
+a:focus-visible,
+button:focus-visible {
+  outline: .22rem solid var(--bv-saffron);
+  outline-offset: .25rem;
+}
+.mag-footer a:hover,
+.mag-footer a:focus-visible { color: var(--bv-saffron); }
+
+/* Mobile gets its own art direction instead of a simple desktop stack. */
+@media (max-width: 899px) {
+  .mag-mobile-bar {
+    color: var(--bv-white);
+    background: rgba(24, 11, 11, .96);
+    border-bottom: .25rem solid var(--bv-saffron);
+    backdrop-filter: blur(12px);
+  }
+
+  .mag-mobile-menu {
+    color: var(--bv-white);
+    background:
+      radial-gradient(circle at 80% 16%, rgba(242, 173, 0, .24), transparent 18rem),
+      linear-gradient(145deg, var(--bv-red), var(--bv-wine) 58%, var(--bv-ink));
+  }
+  .mag-mobile-menu nav a span { color: var(--bv-saffron); }
+
+  .mag-cover { min-height: min(54rem, 100svh); }
+  .mag-cover::after {
+    right: 1rem;
+    bottom: 1rem;
+    font-size: .54rem;
+  }
+  .mag-cover-story h1 { max-width: 9ch; }
+  .mag-cover-story > p:last-child {
+    max-width: 27rem;
+    font-size: .9rem;
+    line-height: 1.5;
+  }
+
+  .mag-cover-vertical,
+  .mag-cover-barcode { opacity: .72; }
+
+  .mag-section {
+    padding-left: clamp(1rem, 5vw, 1.5rem);
+    padding-right: clamp(1rem, 5vw, 1.5rem);
+  }
+
+  .mag-contents-entry p,
+  .mag-index-row > p { line-height: 1.55; }
+
+  .mag-front-quote { box-shadow: .45rem .45rem 0 var(--bv-red); }
+  .mag-page-number { opacity: .55; }
+  .mag-night-sideword { opacity: .38; }
+  .mag-photo-grid { gap: 1rem; }
+  .mag-photo-item > div { min-height: 24rem; }
+  .mag-footer-wordmark { letter-spacing: -.075em; }
+}
+
+@media (max-width: 640px) {
+  .mag-cover::after { content: "DESCUBRIR ↓"; }
+  .mag-cover-lines { gap: .45rem; }
+  .mag-cover-line { background: rgba(24, 11, 11, .32); }
+  .mag-cover-line b { font-size: 1.35rem; }
+
+  .mag-rule-heading h2,
+  .mag-kicker,
+  .mag-credit { letter-spacing: .11em; }
+
+  .mag-feature-columns { font-size: 1rem; line-height: 1.72; }
+  .mag-passion-strip p { line-height: .94; }
+
+  .mag-index-row { grid-template-columns: 3rem 1fr; }
+  .mag-index-row > p,
+  .mag-index-thumb { grid-column: 2; }
+
+  .mag-photo-item > div { min-height: 21rem; }
+  .mag-newsletter { padding: 1.1rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mag-nav-links a,
+  .mag-nav-links a::after,
+  .mag-cover-line { transition: none; }
+}
