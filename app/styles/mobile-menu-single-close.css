@@ -1,0 +1,14 @@
+@media (max-width: 899px) {
+  /* The circular header control already becomes the close button. */
+  .mag-mobile-menu-close {
+    display: none !important;
+  }
+
+  .mag-mobile-menu {
+    padding-top: clamp(2.25rem, 7vw, 3.25rem) !important;
+  }
+
+  .mag-mobile-menu nav {
+    margin-top: 0;
+  }
+}
