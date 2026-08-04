@@ -1,4 +1,4 @@
-/* Source-led correction after production verification. */
+/* Desktop image hard-fix after direct device verification. */
 
 .mag-cover-media > img {
   opacity: 1 !important;
@@ -8,8 +8,8 @@
 
 .mag-cover-shade {
   background:
-    linear-gradient(90deg, rgba(4, 10, 17, .76), rgba(4, 10, 17, .18) 52%, rgba(4, 10, 17, .54)),
-    linear-gradient(0deg, rgba(4, 10, 17, .86), transparent 48%, rgba(4, 10, 17, .34)) !important;
+    linear-gradient(90deg, rgba(4, 10, 17, .70), rgba(4, 10, 17, .12) 52%, rgba(4, 10, 17, .46)),
+    linear-gradient(0deg, rgba(4, 10, 17, .78), transparent 48%, rgba(4, 10, 17, .26)) !important;
 }
 
 .mag-index-feature {
@@ -24,6 +24,52 @@
 .mag-index-feature > img {
   opacity: 1 !important;
   object-position: center 52% !important;
+}
+
+/*
+ * Desktop browsers were receiving blank optimized image responses for these
+ * two critical frames. Render them as direct, known-working image backgrounds
+ * and remove the failed optimized image layer entirely on desktop.
+ */
+@media (min-width: 900px) {
+  .mag-cover-media {
+    background-image: url("https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=2400&q=92") !important;
+    background-size: cover !important;
+    background-position: center 48% !important;
+    background-repeat: no-repeat !important;
+  }
+
+  .mag-cover-media > img {
+    display: none !important;
+  }
+
+  .mag-index-head::after,
+  .mag-index-head::before {
+    display: none !important;
+    content: none !important;
+  }
+
+  .mag-index-feature {
+    background-image: url("https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=2200&q=92") !important;
+    background-size: cover !important;
+    background-position: center 55% !important;
+    background-repeat: no-repeat !important;
+  }
+
+  .mag-index-feature > img {
+    display: none !important;
+  }
+
+  .mag-index-row:first-child .mag-index-thumb {
+    background-image: url("https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=700&q=88") !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+  }
+
+  .mag-index-row:first-child .mag-index-thumb > img {
+    display: none !important;
+  }
 }
 
 @media (max-width: 899px) {
