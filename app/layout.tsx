@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Montserrat } from "next/font/google";
+import VisualImageCorrections from "./components/VisualImageCorrections";
 import "./globals.css";
 import "./styles/header.css";
 import "./styles/features.css";
@@ -20,6 +21,7 @@ import "./styles/magazine-mobile-repair.css";
 import "./styles/magazine-desktop-repair.css";
 import "./styles/magazine-brand-image-pass.css";
 import "./styles/magazine-final-visual-fix.css";
+import "./styles/live-image-menu-correction.css";
 
 const sans = Montserrat({
   variable: "--font-bienvivos-sans",
@@ -72,7 +74,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="es">
-      <body className={`${sans.variable} ${display.variable}`}>{children}</body>
+      <body className={`${sans.variable} ${display.variable}`}>
+        <VisualImageCorrections />
+        {children}
+      </body>
     </html>
   );
 }
