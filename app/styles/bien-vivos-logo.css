@@ -1,78 +1,58 @@
-/* Bien Vivos identity: Spanish sunrise wordmark */
+/* Bien Vivos identity — compact, clean, and usable */
 .mag-mobile-logo,
 .mag-cover-masthead {
   position: relative;
   font-family: var(--font-bienvivos-display), Georgia, serif !important;
   font-weight: 700 !important;
-  letter-spacing: -.065em !important;
+  letter-spacing: -.055em !important;
 }
 
+/* Mobile header lockup: icon beside the wordmark, never sitting on top of it. */
 .mag-mobile-logo {
   display: inline-flex !important;
-  align-items: flex-end;
-  padding-top: 1.15rem;
+  align-items: center !important;
+  gap: .62rem !important;
+  padding: 0 !important;
   color: #fff4df !important;
-  font-size: clamp(1.65rem, 7vw, 2.2rem) !important;
-  line-height: .82 !important;
+  font-size: clamp(1.7rem, 7vw, 2.2rem) !important;
+  line-height: .88 !important;
   text-shadow: 0 1px 12px rgba(0, 0, 0, .45);
 }
 
-.mag-mobile-logo::before,
-.mag-cover-masthead::before {
-  position: absolute;
-  left: 50%;
-  width: 3.4rem;
-  height: 1.45rem;
+.mag-mobile-logo::before {
+  flex: 0 0 auto;
+  width: 2rem;
+  height: 2rem;
   content: "";
-  transform: translateX(-50%);
-  background:
-    linear-gradient(72deg, transparent 44%, #f2ad00 45% 55%, transparent 56%) 0 100% / 24% 78% no-repeat,
-    linear-gradient(82deg, transparent 44%, #f2ad00 45% 55%, transparent 56%) 25% 100% / 24% 96% no-repeat,
-    linear-gradient(90deg, transparent 44%, #f2ad00 45% 55%, transparent 56%) 50% 100% / 24% 100% no-repeat,
-    linear-gradient(98deg, transparent 44%, #f2ad00 45% 55%, transparent 56%) 75% 100% / 24% 96% no-repeat,
-    linear-gradient(108deg, transparent 44%, #f2ad00 45% 55%, transparent 56%) 100% 100% / 24% 78% no-repeat;
-  filter: drop-shadow(0 2px 5px rgba(242, 173, 0, .2));
+  border-radius: 50%;
+  background-color: #4b0d1d;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cg fill='none' stroke-linecap='round'%3E%3Cpath d='M18 63h17c4-12 9-18 15-18s11 6 15 18h17' stroke='%23d95f35' stroke-width='6'/%3E%3Cpath d='M50 17v25M31 24l11 20M69 24L58 44M20 38l20 11M80 38L60 49M14 53l24 4M86 53l-24 4' stroke='%23f2ad00' stroke-width='5'/%3E%3Cpath d='M50 62l4 7 7 4-7 4-4 7-4-7-7-4 7-4z' fill='%23f07a3d' stroke='none'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 86%;
+  box-shadow: 0 0 0 1px rgba(242, 173, 0, .18), 0 3px 10px rgba(0, 0, 0, .22);
 }
 
-.mag-mobile-logo::after,
+.mag-mobile-logo::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* The cover masthead stays editorial and uncluttered. */
+.mag-cover-masthead::before,
 .mag-cover-masthead::after {
-  position: absolute;
-  left: 50%;
-  width: 3.8rem;
-  height: .8rem;
-  border-top: .18rem solid #d95f35;
-  border-radius: 50% 50% 0 0;
-  content: "";
-  transform: translateX(-50%);
+  display: none !important;
+  content: none !important;
 }
 
-.mag-mobile-logo::before { top: -.18rem; }
-.mag-mobile-logo::after { top: .72rem; }
-
-.mag-cover-masthead::before {
-  top: -1.85rem;
-  width: clamp(5rem, 8vw, 8.5rem);
-  height: clamp(2rem, 3.4vw, 3.7rem);
-}
-
-.mag-cover-masthead::after {
-  top: -.15rem;
-  width: clamp(5.8rem, 9vw, 9.5rem);
-  height: 1.2rem;
-  border-top-width: .25rem;
-}
-
-@media (max-width: 899px) {
-  .mag-cover-masthead::before {
-    top: -1.2rem;
-    width: 4.2rem;
-    height: 1.8rem;
+@media (max-width: 420px) {
+  .mag-mobile-logo {
+    gap: .48rem !important;
+    font-size: 1.72rem !important;
   }
 
-  .mag-cover-masthead::after {
-    top: .15rem;
-    width: 4.8rem;
-    height: .9rem;
-    border-top-width: .18rem;
+  .mag-mobile-logo::before {
+    width: 1.72rem;
+    height: 1.72rem;
   }
 }
