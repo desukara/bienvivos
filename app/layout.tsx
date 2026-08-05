@@ -27,6 +27,7 @@ import "./styles/mobile-menu-overlap-fix.css";
 import "./styles/bien-vivos-passion-pass.css";
 import "./styles/cover-art-direction.css";
 import "./styles/nav-contrast-fix.css";
+import "./styles/bien-vivos-logo.css";
 
 const sans = Montserrat({
   variable: "--font-bienvivos-sans",
@@ -44,6 +45,13 @@ const display = Cormorant_Garamond({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.bienvivos.com"),
+  manifest: "/manifest.webmanifest",
+  themeColor: "#4b0d1d",
+  appleWebApp: {
+    capable: true,
+    title: "Bien Vivos",
+    statusBarStyle: "black-translucent",
+  },
   alternates: {
     canonical: "/",
   },
