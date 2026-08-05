@@ -1,0 +1,78 @@
+/* Bien Vivos identity: Spanish sunrise wordmark */
+.mag-mobile-logo,
+.mag-cover-masthead {
+  position: relative;
+  font-family: var(--font-bienvivos-display), Georgia, serif !important;
+  font-weight: 700 !important;
+  letter-spacing: -.065em !important;
+}
+
+.mag-mobile-logo {
+  display: inline-flex !important;
+  align-items: flex-end;
+  padding-top: 1.15rem;
+  color: #fff4df !important;
+  font-size: clamp(1.65rem, 7vw, 2.2rem) !important;
+  line-height: .82 !important;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, .45);
+}
+
+.mag-mobile-logo::before,
+.mag-cover-masthead::before {
+  position: absolute;
+  left: 50%;
+  width: 3.4rem;
+  height: 1.45rem;
+  content: "";
+  transform: translateX(-50%);
+  background:
+    linear-gradient(72deg, transparent 44%, #f2ad00 45% 55%, transparent 56%) 0 100% / 24% 78% no-repeat,
+    linear-gradient(82deg, transparent 44%, #f2ad00 45% 55%, transparent 56%) 25% 100% / 24% 96% no-repeat,
+    linear-gradient(90deg, transparent 44%, #f2ad00 45% 55%, transparent 56%) 50% 100% / 24% 100% no-repeat,
+    linear-gradient(98deg, transparent 44%, #f2ad00 45% 55%, transparent 56%) 75% 100% / 24% 96% no-repeat,
+    linear-gradient(108deg, transparent 44%, #f2ad00 45% 55%, transparent 56%) 100% 100% / 24% 78% no-repeat;
+  filter: drop-shadow(0 2px 5px rgba(242, 173, 0, .2));
+}
+
+.mag-mobile-logo::after,
+.mag-cover-masthead::after {
+  position: absolute;
+  left: 50%;
+  width: 3.8rem;
+  height: .8rem;
+  border-top: .18rem solid #d95f35;
+  border-radius: 50% 50% 0 0;
+  content: "";
+  transform: translateX(-50%);
+}
+
+.mag-mobile-logo::before { top: -.18rem; }
+.mag-mobile-logo::after { top: .72rem; }
+
+.mag-cover-masthead::before {
+  top: -1.85rem;
+  width: clamp(5rem, 8vw, 8.5rem);
+  height: clamp(2rem, 3.4vw, 3.7rem);
+}
+
+.mag-cover-masthead::after {
+  top: -.15rem;
+  width: clamp(5.8rem, 9vw, 9.5rem);
+  height: 1.2rem;
+  border-top-width: .25rem;
+}
+
+@media (max-width: 899px) {
+  .mag-cover-masthead::before {
+    top: -1.2rem;
+    width: 4.2rem;
+    height: 1.8rem;
+  }
+
+  .mag-cover-masthead::after {
+    top: .15rem;
+    width: 4.8rem;
+    height: .9rem;
+    border-top-width: .18rem;
+  }
+}
