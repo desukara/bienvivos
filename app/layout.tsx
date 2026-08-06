@@ -1,6 +1,5 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond, Montserrat } from "next/font/google";
-import VisualImageCorrections from "./components/VisualImageCorrections";
 import "./globals.css";
 import "./styles/header.css";
 import "./styles/features.css";
@@ -43,10 +42,13 @@ const display = Cormorant_Garamond({
   display: "swap",
 });
 
+export const viewport: Viewport = {
+  themeColor: "#4b0d1d",
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.bienvivos.com"),
   manifest: "/manifest.webmanifest",
-  themeColor: "#4b0d1d",
   appleWebApp: {
     capable: true,
     title: "Bien Vivos",
@@ -84,11 +86,22 @@ export const metadata: Metadata = {
   },
 };
 
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Bien Vivos",
+  url: "https://www.bienvivos.com",
+  description: "Revista independiente de Tokio para el mundo hispanohablante.",
+};
+
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="es">
       <body className={`${sans.variable} ${display.variable}`}>
-        <VisualImageCorrections />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
         {children}
       </body>
     </html>
