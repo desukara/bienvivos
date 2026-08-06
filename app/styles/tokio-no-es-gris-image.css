@@ -38,6 +38,30 @@
   object-position: center;
 }
 
+/* Ritmo urbano uses separate desktop and mobile magazine crops. */
+.mag-photo-grid > .mag-photo-item:nth-child(4) .mag-media {
+  position: relative !important;
+  overflow: hidden !important;
+  background: none !important;
+}
+
+.mag-photo-grid > .mag-photo-item:nth-child(4) .mag-media::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: block;
+  background-image: url("/images/editorial/ritmo-urbano-giraffe-desktop.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  pointer-events: none;
+}
+
+.mag-photo-grid > .mag-photo-item:nth-child(4) .mag-media > img {
+  opacity: 0 !important;
+}
+
 /* Tokio en flor uses purpose-built art direction rather than asking one crop
    to survive both a panoramic desktop spread and a portrait mobile card. */
 .mag-photo-grid > .mag-photo-item:nth-child(6) .mag-media {
@@ -64,6 +88,11 @@
 }
 
 @media (max-width: 899px) {
+  .mag-photo-grid > .mag-photo-item:nth-child(4) .mag-media::before {
+    background-image: url("/images/editorial/ritmo-urbano-giraffe-mobile.png");
+    background-position: center;
+  }
+
   .mag-photo-grid > .mag-photo-item:nth-child(6) .mag-media::before {
     background-image: url("/images/editorial/tokio-en-flor-tanabata-mobile.png");
     background-position: center;
