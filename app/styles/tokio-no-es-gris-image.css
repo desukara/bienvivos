@@ -171,7 +171,7 @@
 }
 
 .mag-photo-item:nth-child(1) figcaption > span:last-child::after {
-  content: "Deseos encendidos entre los árboles";
+  content: "Dos personas, una ciudad en movimiento";
 }
 
 .mag-photo-item:nth-child(2) figcaption > span:last-child::after {
@@ -187,7 +187,7 @@
 }
 
 .mag-photo-item:nth-child(5) figcaption > span:last-child::after {
-  content: "La noche se sirve con neón y farolillos";
+  content: "Un cerdo de papel vigila el paseo";
 }
 
 .mag-photo-item:nth-child(6) figcaption > span:last-child::after {
