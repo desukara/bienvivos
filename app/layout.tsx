@@ -27,6 +27,7 @@ import "./styles/bien-vivos-passion-pass.css";
 import "./styles/cover-art-direction.css";
 import "./styles/nav-contrast-fix.css";
 import "./styles/bien-vivos-logo.css";
+import "./styles/hero-image.css";
 
 const sans = Montserrat({
   variable: "--font-bienvivos-sans",
