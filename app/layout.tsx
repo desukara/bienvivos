@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond, Montserrat } from "next/font/google";
 import "./globals.css";
 import "./styles/header.css";
@@ -42,10 +42,13 @@ const display = Cormorant_Garamond({
   display: "swap",
 });
 
+export const viewport: Viewport = {
+  themeColor: "#4b0d1d",
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.bienvivos.com"),
   manifest: "/manifest.webmanifest",
-  themeColor: "#4b0d1d",
   appleWebApp: {
     capable: true,
     title: "Bien Vivos",
