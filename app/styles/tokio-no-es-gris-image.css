@@ -1,27 +1,25 @@
-/* Use the local Asagaya lantern photograph for the lead image in the
-   "Tokio no es gris" photo essay on every viewport. */
-.mag-photo-item:nth-child(1),
-.mag-photo-item:nth-child(1) > div {
-  background-image: url("/images/editorial/tokio-no-es-gris-asagaya-lanterns.png") !important;
-  background-position: 50% 50% !important;
-  background-repeat: no-repeat !important;
-  background-size: cover !important;
+/* Render the local Asagaya lantern photograph as a real overlay inside the
+   first Tokio no es gris frame. This avoids viewport-specific background
+   behavior and keeps the same result on desktop and mobile. */
+.mag-photo-grid > .mag-photo-item:first-child .mag-media {
+  position: relative !important;
+  overflow: hidden !important;
+  background: none !important;
 }
 
-.mag-photo-item:nth-child(1) > div {
-  background-color: transparent !important;
+.mag-photo-grid > .mag-photo-item:first-child .mag-media::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: block;
+  background-image: url("/images/editorial/tokio-no-es-gris-asagaya-lanterns.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  pointer-events: none;
 }
 
-.mag-photo-item:nth-child(1) img {
+.mag-photo-grid > .mag-photo-item:first-child .mag-media > img {
   opacity: 0 !important;
-}
-
-@media (max-width: 899px) {
-  .mag-photo-item:nth-child(1),
-  .mag-photo-item:nth-child(1) > div {
-    background-image: url("/images/editorial/tokio-no-es-gris-asagaya-lanterns.png") !important;
-    background-position: 50% 50% !important;
-    background-repeat: no-repeat !important;
-    background-size: cover !important;
-  }
 }
