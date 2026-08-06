@@ -1,29 +1,29 @@
 /* Responsive art direction for the Bien Vivos cover photograph. */
-.mag-cover-media {
-  background: #1a1512 url("/images/bienvivos-hero-tokyo.webp") center 54% / cover no-repeat;
+.mag-cover .mag-cover-media {
+  background: #1a1512 url("/images/bienvivos-hero-tokyo.webp") center 54% / cover no-repeat !important;
 }
 
-/* Global image rules load later in production, so force the legacy image out. */
+/* Remove the legacy remote image so only the approved local cover is rendered. */
 .mag-cover-media > img,
 .mag-mini-cover > img {
   opacity: 0 !important;
   visibility: hidden !important;
 }
 
-.mag-mini-cover {
-  background: #1a1512 url("/images/bienvivos-hero-tokyo.webp") center 54% / cover no-repeat;
+.mag-back-cover .mag-mini-cover {
+  background: #1a1512 url("/images/bienvivos-hero-tokyo.webp") center 54% / cover no-repeat !important;
 }
 
 @media (max-width: 640px) {
-  .mag-cover-media,
-  .mag-mini-cover {
-    background-position: 43% 58%;
+  .mag-cover .mag-cover-media,
+  .mag-back-cover .mag-mini-cover {
+    background-position: 43% 58% !important;
   }
 }
 
 @media (min-width: 641px) and (max-width: 899px) {
-  .mag-cover-media,
-  .mag-mini-cover {
-    background-position: 47% 56%;
+  .mag-cover .mag-cover-media,
+  .mag-back-cover .mag-mini-cover {
+    background-position: 47% 56% !important;
   }
 }
