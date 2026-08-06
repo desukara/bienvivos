@@ -1,0 +1,30 @@
+/* Responsive art direction for the Bien Vivos cover photograph. */
+.mag-cover-media {
+  background: #1a1512 url("/images/bienvivos-hero-tokyo.webp") center 54% / cover no-repeat;
+}
+
+.mag-cover-media img {
+  opacity: 0;
+}
+
+.mag-mini-cover {
+  background: #1a1512 url("/images/bienvivos-hero-tokyo.webp") center 54% / cover no-repeat;
+}
+
+.mag-mini-cover img {
+  opacity: 0;
+}
+
+@media (max-width: 640px) {
+  .mag-cover-media,
+  .mag-mini-cover {
+    background-position: 43% 58%;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 899px) {
+  .mag-cover-media,
+  .mag-mini-cover {
+    background-position: 47% 56%;
+  }
+}
