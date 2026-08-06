@@ -1,12 +1,27 @@
 /* Use the uploaded Asagaya lantern photograph for the lead image in the
    "Tokio no es gris" photo essay while the asset remains at repo root. */
+.mag-photo-item:nth-child(1),
 .mag-photo-item:nth-child(1) > div {
-  background-image: url("https://raw.githubusercontent.com/desukara/bienvivos/main/tokio-no-es-gris-asagaya-lanterns.png");
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-image: url("https://raw.githubusercontent.com/desukara/bienvivos/main/tokio-no-es-gris-asagaya-lanterns.png") !important;
+  background-position: 50% 50% !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
 }
 
-.mag-photo-item:nth-child(1) > div > img {
-  opacity: 0;
+.mag-photo-item:nth-child(1) > div {
+  background-color: transparent !important;
+}
+
+.mag-photo-item:nth-child(1) img {
+  opacity: 0 !important;
+}
+
+@media (max-width: 899px) {
+  .mag-photo-item:nth-child(1),
+  .mag-photo-item:nth-child(1) > div {
+    background-image: url("https://raw.githubusercontent.com/desukara/bienvivos/main/tokio-no-es-gris-asagaya-lanterns.png") !important;
+    background-position: 50% 50% !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+  }
 }
