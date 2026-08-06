@@ -29,7 +29,7 @@ const indexStories = [
 
 const photoEssayImages = [
   { src: "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=1800&q=92", label: "Noche eléctrica" },
-  { src: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1400&q=90", label: "Color en movimiento" },
+  { src: "/images/editorial/tokio-no-es-gris-mona-lisa-tanabata.png", label: "Mona Lisa de Tanabata" },
   { src: "https://images.unsplash.com/photo-1528360983277-13d401cdc186?auto=format&fit=crop&w=1400&q=90", label: "La ciudad despierta" },
   { src: "https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=1400&q=90", label: "Ritmo urbano" },
   { src: "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=1400&q=90", label: "Después del anochecer" },
