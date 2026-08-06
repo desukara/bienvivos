@@ -156,3 +156,40 @@
     background-position: center;
   }
 }
+
+/* Captions with the same color, movement and neighborhood energy as the photographs. */
+.mag-photo-item figcaption > span:last-child {
+  font-size: 0;
+}
+
+.mag-photo-item figcaption > span:last-child::after {
+  font-size: .6rem;
+  font-weight: 850;
+  letter-spacing: .1em;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+
+.mag-photo-item:nth-child(1) figcaption > span:last-child::after {
+  content: "Deseos encendidos entre los árboles";
+}
+
+.mag-photo-item:nth-child(2) figcaption > span:last-child::after {
+  content: "La Gioconda también celebra Tanabata";
+}
+
+.mag-photo-item:nth-child(3) figcaption > span:last-child::after {
+  content: "Asagaya pedalea bajo un cielo de papel";
+}
+
+.mag-photo-item:nth-child(4) figcaption > span:last-child::after {
+  content: "Una jirafa toma la calle";
+}
+
+.mag-photo-item:nth-child(5) figcaption > span:last-child::after {
+  content: "La noche se sirve con neón y farolillos";
+}
+
+.mag-photo-item:nth-child(6) figcaption > span:last-child::after {
+  content: "Tanabata convierte el barrio en una fiesta";
+}
