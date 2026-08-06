@@ -1,8 +1,8 @@
-/* Use the uploaded Asagaya lantern photograph for the lead image in the
-   "Tokio no es gris" photo essay while the asset remains at repo root. */
+/* Use the local Asagaya lantern photograph for the lead image in the
+   "Tokio no es gris" photo essay on every viewport. */
 .mag-photo-item:nth-child(1),
 .mag-photo-item:nth-child(1) > div {
-  background-image: url("https://raw.githubusercontent.com/desukara/bienvivos/main/tokio-no-es-gris-asagaya-lanterns.png") !important;
+  background-image: url("/images/editorial/tokio-no-es-gris-asagaya-lanterns.png") !important;
   background-position: 50% 50% !important;
   background-repeat: no-repeat !important;
   background-size: cover !important;
@@ -19,7 +19,7 @@
 @media (max-width: 899px) {
   .mag-photo-item:nth-child(1),
   .mag-photo-item:nth-child(1) > div {
-    background-image: url("https://raw.githubusercontent.com/desukara/bienvivos/main/tokio-no-es-gris-asagaya-lanterns.png") !important;
+    background-image: url("/images/editorial/tokio-no-es-gris-asagaya-lanterns.png") !important;
     background-position: 50% 50% !important;
     background-repeat: no-repeat !important;
     background-size: cover !important;
