@@ -23,3 +23,17 @@
 .mag-photo-grid > .mag-photo-item:first-child .mag-media > img {
   opacity: 0 !important;
 }
+
+/* The second frame previously had a legacy Unsplash background and forced its
+   real Next.js image to opacity: 0. Restore the uploaded Mona Lisa photograph
+   in the same responsive frame on desktop and mobile. */
+.mag-photo-grid > .mag-photo-item:nth-child(2) .mag-media {
+  background: none !important;
+}
+
+.mag-photo-grid > .mag-photo-item:nth-child(2) .mag-media > img {
+  opacity: 1 !important;
+  visibility: visible !important;
+  object-fit: cover;
+  object-position: center;
+}
