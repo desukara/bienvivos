@@ -37,3 +37,35 @@
   object-fit: cover;
   object-position: center;
 }
+
+/* Tokio en flor uses purpose-built art direction rather than asking one crop
+   to survive both a panoramic desktop spread and a portrait mobile card. */
+.mag-photo-grid > .mag-photo-item:nth-child(6) .mag-media {
+  position: relative !important;
+  overflow: hidden !important;
+  background: none !important;
+}
+
+.mag-photo-grid > .mag-photo-item:nth-child(6) .mag-media::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: block;
+  background-image: url("/images/editorial/tokio-en-flor-tanabata-desktop.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  pointer-events: none;
+}
+
+.mag-photo-grid > .mag-photo-item:nth-child(6) .mag-media > img {
+  opacity: 0 !important;
+}
+
+@media (max-width: 899px) {
+  .mag-photo-grid > .mag-photo-item:nth-child(6) .mag-media::before {
+    background-image: url("/images/editorial/tokio-en-flor-tanabata-mobile.png");
+    background-position: center;
+  }
+}
