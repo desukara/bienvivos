@@ -59,17 +59,6 @@
   .mag-index-feature > img {
     display: none !important;
   }
-
-  .mag-index-row:first-child .mag-index-thumb {
-    background-image: url("https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=700&q=88") !important;
-    background-size: cover !important;
-    background-position: center !important;
-    background-repeat: no-repeat !important;
-  }
-
-  .mag-index-row:first-child .mag-index-thumb > img {
-    display: none !important;
-  }
 }
 
 @media (max-width: 899px) {
