@@ -2,6 +2,11 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.eastokyo.com"),
+  appleWebApp: {
+    capable: true,
+    title: "EASTOKYO",
+    statusBarStyle: "black-translucent",
+  },
   alternates: {
     canonical: "/",
     languages: {
@@ -10,8 +15,7 @@ export const metadata: Metadata = {
     },
   },
   title: {
-    default: "EASTOKYO — Tokyo, fully alive",
-    template: "%s | EASTOKYO",
+    absolute: "EASTOKYO — Tokyo, fully alive",
   },
   description: "EASTOKYO is an independent magazine about Tokyo culture, food, music, photography, neighborhoods and city life.",
   openGraph: {
