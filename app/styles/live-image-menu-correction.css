@@ -50,9 +50,9 @@
   }
 
   .mag-index-feature {
-    background-image: url("https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=2200&q=92") !important;
+    background-image: url("/images/editorial/mas-tokio-desktop.jpg") !important;
     background-size: cover !important;
-    background-position: center 55% !important;
+    background-position: center center !important;
     background-repeat: no-repeat !important;
   }
 
@@ -116,6 +116,14 @@
 
   .mag-index-feature {
     aspect-ratio: 4 / 3;
+    background-image: url("/images/editorial/mas-tokio-mobile.jpg") !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+  }
+
+  .mag-index-feature > img {
+    display: none !important;
   }
 }
 
