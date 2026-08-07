@@ -29,6 +29,7 @@ import "./styles/nav-contrast-fix.css";
 import "./styles/bien-vivos-logo.css";
 import "./styles/hero-image.css";
 import "./styles/tokio-no-es-gris-image.css";
+import "./styles/todo-vivos-image.css";
 
 const sans = Montserrat({
   variable: "--font-bienvivos-sans",
