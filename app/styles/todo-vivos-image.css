@@ -1,0 +1,18 @@
+/* Responsive art direction for the contents image: "CALLE · BIEN VIVOS / TOKIO" */
+.mag-contents-image {
+  background-image: url("/images/editorial/todo-vivos-desktop.jpg") !important;
+  background-position: 50% 50% !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+}
+
+.mag-contents-image > img {
+  display: none !important;
+}
+
+@media (max-width: 640px) {
+  .mag-contents-image {
+    background-image: url("/images/editorial/todo-vivos-mobile.jpg") !important;
+    background-position: 50% 50% !important;
+  }
+}
