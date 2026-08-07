@@ -28,7 +28,7 @@
 
 /* Use the committed Objects thumbnail consistently on every breakpoint. */
 .mag-index-row:nth-child(2) .mag-index-thumb {
-  background-image: url("/images/editorial/index-objects-thumb.jpg") !important;
+  background-image: url("/images/editorial/index-objects-thumb.png") !important;
   background-size: cover !important;
   background-position: center center !important;
   background-repeat: no-repeat !important;
