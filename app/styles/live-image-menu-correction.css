@@ -26,6 +26,18 @@
   object-position: center 52% !important;
 }
 
+/* Use the committed Objects thumbnail consistently on every breakpoint. */
+.mag-index-row:nth-child(2) .mag-index-thumb {
+  background-image: url("/images/editorial/index-objects-thumb.jpg") !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+}
+
+.mag-index-row:nth-child(2) .mag-index-thumb > img {
+  display: none !important;
+}
+
 /*
  * Desktop browsers were receiving blank optimized image responses for these
  * two critical frames. Render them as direct, known-working image backgrounds
