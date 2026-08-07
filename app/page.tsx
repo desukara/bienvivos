@@ -21,7 +21,7 @@ const contents = [
 ];
 
 const indexStories = [
-  { page: "64", section: "BARRIOS", title: "Koenji después de las seis", copy: "Tiendas pequeñas, barras largas y una noche que todavía pertenece a sus vecinos.", image: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1000&q=88" },
+  { page: "64", section: "BARRIOS", title: "Koenji después de las seis", copy: "Tiendas pequeñas, barras largas y una noche que todavía pertenece a sus vecinos.", image: "/images/editorial/index-koenji-thumb.jpg" },
   { page: "68", section: "OBJETOS", title: "El detalle como forma de respeto", copy: "Cinco gestos japoneses que convierten lo cotidiano en algo memorable.", image: "https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?auto=format&fit=crop&w=1000&q=88" },
   { page: "72", section: "SONIDO", title: "Qué está escuchando Tokio ahora", copy: "Una lista sin complejos: pop, electrónica, guitarras y mucho volumen.", image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=1000&q=88" },
   { page: "76", section: "AGENDA", title: "Ocho razones para salir esta semana", copy: "Arte, comida y música para no dejar que Tokio se convierta en rutina.", image: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1000&q=88" },
