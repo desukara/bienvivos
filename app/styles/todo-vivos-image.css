@@ -16,3 +16,49 @@
     background-position: 50% 50% !important;
   }
 }
+
+/*
+ * Mobile Chrome was painting the media placeholders above the CSS background
+ * images. Put the local editorial art on its own top-level media layer instead,
+ * and remove the extra guide-header image panel on mobile.
+ */
+@media (max-width: 899px) {
+  .mag-index-head::before,
+  .mag-index-head::after {
+    display: none !important;
+    content: none !important;
+  }
+
+  .mag-index-feature,
+  .mag-contents-image {
+    position: relative !important;
+    isolation: isolate !important;
+    background-image: none !important;
+  }
+
+  .mag-index-feature::before,
+  .mag-contents-image::before {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    display: block;
+    content: "";
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    pointer-events: none;
+  }
+
+  .mag-index-feature::before {
+    background-image: url("/images/editorial/mas-tokio-mobile.jpg") !important;
+  }
+
+  .mag-contents-image::before {
+    background-image: url("/images/editorial/todo-vivos-mobile.jpg") !important;
+  }
+
+  .mag-index-feature figcaption,
+  .mag-contents-image figcaption {
+    z-index: 3 !important;
+  }
+}
