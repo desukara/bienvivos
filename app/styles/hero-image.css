@@ -1,29 +1,34 @@
-/* Responsive art direction for the Bien Vivos cover photograph. */
+/* Responsive art direction for the Bien Vivos Picasso bullfight cover. */
 .mag-cover .mag-cover-media {
-  background: #1a1512 url("/images/bienvivos-hero-tokyo.webp") center 54% / cover no-repeat !important;
+  background: #1a1512 url("/images/editorial/picasso-bullfight-01-desktop.png") center 54% / cover no-repeat !important;
 }
 
-/* Remove the legacy remote image so only the approved local cover is rendered. */
-.mag-cover-media > img,
+/* The responsive <picture> in app/page.tsx is the primary cover image. */
+.mag-cover-media > img {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
 .mag-mini-cover > img {
-  opacity: 0 !important;
-  visibility: hidden !important;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 .mag-back-cover .mag-mini-cover {
-  background: #1a1512 url("/images/bienvivos-hero-tokyo.webp") center 54% / cover no-repeat !important;
+  background: #1a1512 url("/images/editorial/picasso-bullfight-01-desktop.png") center 54% / cover no-repeat !important;
 }
 
 @media (max-width: 640px) {
   .mag-cover .mag-cover-media,
   .mag-back-cover .mag-mini-cover {
-    background-position: 43% 58% !important;
+    background-image: url("/images/editorial/picasso-bullfight-01-mobile.png") !important;
+    background-position: center center !important;
   }
 }
 
 @media (min-width: 641px) and (max-width: 899px) {
   .mag-cover .mag-cover-media,
   .mag-back-cover .mag-mini-cover {
-    background-position: 47% 56% !important;
+    background-position: center 52% !important;
   }
 }
