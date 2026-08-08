@@ -1,0 +1,19 @@
+.picasso-feature{padding-bottom:clamp(4rem,7vw,7rem)}
+.picasso-feature-intro{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(16rem,.65fr);gap:clamp(2rem,5vw,6rem);align-items:end;margin:clamp(2rem,4vw,4rem) 0}
+.picasso-feature-title h3{max-width:12ch;margin:.35rem 0 1.2rem;font-family:var(--font-display),Georgia,serif;font-size:clamp(3.4rem,7.4vw,8.4rem);font-weight:700;letter-spacing:-.06em;line-height:.82}
+.picasso-feature-title .mag-deck{max-width:36rem;margin:0;font-size:clamp(1.15rem,1.8vw,1.7rem);line-height:1.25}
+.picasso-feature-note{padding-top:1rem;border-top:1px solid currentColor}
+.picasso-feature-note strong{display:block;margin-bottom:.8rem;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase}
+.picasso-feature-note p{margin:0;font-family:var(--font-display),Georgia,serif;font-size:clamp(1.2rem,1.7vw,1.55rem);line-height:1.25}
+.picasso-gallery{display:grid;grid-template-columns:1.35fr .65fr;grid-template-rows:minmax(18rem,30vw) minmax(18rem,30vw);gap:clamp(.65rem,1.2vw,1.25rem)}
+.picasso-shot{position:relative;margin:0;overflow:hidden;background:#111}
+.picasso-shot-1{grid-row:1/3}
+.picasso-shot .picasso-picture{display:block;position:absolute;inset:0}
+.picasso-shot img{width:100%;height:100%;object-fit:cover}
+.picasso-shot figcaption{position:absolute;z-index:2;right:0;bottom:0;left:0;display:flex;justify-content:space-between;gap:1rem;padding:.8rem 1rem;color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.76));font-size:.62rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase}
+.picasso-gallery-secondary{display:grid;grid-template-columns:1fr 1fr;gap:clamp(.65rem,1.2vw,1.25rem);margin-top:clamp(.65rem,1.2vw,1.25rem)}
+.picasso-gallery-secondary .picasso-shot{aspect-ratio:16/10}
+.picasso-feature-outro{display:grid;grid-template-columns:.7fr 1.3fr;gap:clamp(2rem,5vw,6rem);margin-top:clamp(2rem,4vw,4rem);padding-top:1.4rem;border-top:1px solid currentColor}
+.picasso-feature-outro .picasso-meta{font-size:.68rem;font-weight:800;letter-spacing:.12em;line-height:1.7;text-transform:uppercase}
+.picasso-feature-outro p{max-width:52rem;margin:0;font-family:var(--font-display),Georgia,serif;font-size:clamp(1.25rem,2vw,1.8rem);line-height:1.3}
+@media(max-width:640px){.picasso-feature-intro{display:block;margin:2rem 0}.picasso-feature-title h3{max-width:none;font-size:clamp(3.15rem,15vw,5rem);line-height:.84}.picasso-feature-note{margin-top:2rem}.picasso-gallery{display:block}.picasso-shot{margin-bottom:.75rem;aspect-ratio:4/5}.picasso-shot-1{aspect-ratio:4/5}.picasso-gallery-secondary{grid-template-columns:1fr 1fr;gap:.55rem;margin-top:.55rem}.picasso-gallery-secondary .picasso-shot{aspect-ratio:3/4;margin:0}.picasso-shot figcaption{padding:.65rem;font-size:.52rem}.picasso-shot figcaption span:last-child{display:none}.picasso-feature-outro{display:block;margin-top:2rem}.picasso-feature-outro p{margin-top:1.25rem;font-size:1.35rem}}
