@@ -137,7 +137,13 @@ export default function EastokyoHome() {
               <p className="mag-kicker">ART · PICASSO IN TOKYO</p><h3>Picasso, through the eyes of Paul Smith</h3><p>At The National Art Center, Tokyo, Picasso’s work meets Paul Smith’s unmistakable eye for color, pattern and surprise.</p>
             </article>
             <div className="mag-front-stack">
-              <article className="mag-front-card"><p className="mag-kicker">OBJECT OF THE MONTH</p><h3>The art of paying attention</h3><span>↗</span></article>
+              <article className="mag-front-card">
+                <picture style={{ display: "block", width: "100%", marginBottom: "1rem" }}>
+                  <source media="(max-width: 640px)" srcSet="/images/editorial/picasso-paying-attention-mobile.jpg" />
+                  <img src="/images/editorial/picasso-paying-attention-desktop.png" alt="A visitor studying a Picasso work at The National Art Center, Tokyo" style={{ display: "block", width: "100%", height: "auto" }} />
+                </picture>
+                <p className="mag-kicker">OBJECT OF THE MONTH</p><h3>The art of paying attention</h3><span>↗</span>
+              </article>
               <article className="mag-front-card"><p className="mag-kicker">NEIGHBORHOOD · KOENJI</p><h3>Koenji belongs to the night</h3><span>↗</span></article>
             </div>
             <aside className="mag-front-quote"><b>01</b><p>“We do not want to explain Tokyo from a distance. We want to live close enough to argue with it.”</p><span className="mag-kicker">EASTOKYO MANIFESTO</span></aside>
