@@ -31,6 +31,7 @@ import "./styles/bien-vivos-logo.css";
 import "./styles/hero-image.css";
 import "./styles/tokio-no-es-gris-image.css";
 import "./styles/todo-vivos-image.css";
+import "./styles/bienvivos-picasso-feature.css";
 
 const sans = Montserrat({ variable: "--font-bienvivos-sans", subsets: ["latin"], display: "swap" });
 const display = Cormorant_Garamond({ variable: "--font-bienvivos-display", subsets: ["latin"], weight: ["400", "500", "600", "700"], style: ["normal", "italic"], display: "swap" });
