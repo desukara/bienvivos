@@ -1,16 +1,21 @@
 /* Final visual corrections from live laptop screenshots.
-   Adds a true nocturnal hero, removes repeated imagery, fills the guide opener,
-   and prevents browser translation from exposing the oversized night sideword. */
+   The cover now uses the responsive Picasso bullfight <picture> from app/page.tsx.
+   Keep this file focused on overlays and lower-page visual corrections. */
 
-/* True photographic hero: nightlife, movement, darker editorial color. */
 .mag-cover-media {
-  background:
-    linear-gradient(135deg, rgba(8, 16, 26, .08), rgba(8, 16, 26, .28)),
-    url("https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=2400&q=94") center 54% / cover no-repeat;
+  background: #101010;
 }
 
 .mag-cover-media > img {
-  opacity: 0 !important;
+  opacity: 1 !important;
+}
+
+.mag-cover-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 54%;
 }
 
 .mag-cover-shade {
@@ -23,15 +28,11 @@
   text-shadow: 0 .08em .35em rgba(0, 0, 0, .3);
 }
 
-/* The translated word “EVENINGS” was leaking out from behind the music image.
-   Remove the decorative text layer completely; the photography carries the spread. */
 .mag-night-sideword {
   display: none !important;
   content-visibility: hidden;
 }
 
-/* The bright Tokyo street photograph appeared in both the guide and photo essay.
-   Keep it in the guide; give the essay a distinct abstract-color frame. */
 .mag-photo-item:nth-child(2) .mag-media {
   background:
     linear-gradient(135deg, rgba(20, 38, 59, .04), rgba(16, 24, 32, .12)),
@@ -42,7 +43,6 @@
   opacity: 0 !important;
 }
 
-/* Fill the guide opener with a second, quieter image panel rather than dead paper. */
 .mag-index-head {
   position: relative;
 }
@@ -78,8 +78,8 @@
 }
 
 @media (min-width: 900px) and (max-width: 1399px) {
-  .mag-cover-media {
-    background-position: center 48%;
+  .mag-cover-media img {
+    object-position: center 48%;
   }
 
   .mag-cover-masthead {
@@ -96,8 +96,8 @@
 }
 
 @media (max-width: 899px) {
-  .mag-cover-media {
-    background-position: 58% center;
+  .mag-cover-media img {
+    object-position: 58% center;
   }
 
   .mag-index-head::after {
