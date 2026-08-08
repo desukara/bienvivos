@@ -187,7 +187,7 @@ export default function EastokyoHome() {
 
         <section className="mag-section mag-photo" id="foto" aria-labelledby="photo-title">
           <header className="mag-photo-heading"><p className="mag-kicker">PHOTO ESSAY · P. 56</p><h2 id="photo-title">Tokyo is not grey.</h2><p>Color is everywhere. You just have to stop treating the city like background.</p></header>
-          <div className="mag-photo-grid">{photoEssayImages.map((image, index) => <figure key={image.src} className={`mag-photo-${index + 1} mag-media`}><EditorialImage src={image.src} alt={image.label} sizes={index === 0 || index === 5 ? "(max-width: 640px) 100vw, 62vw" : "(max-width: 640px) 100vw, 31vw" /><figcaption className="mag-credit">0{index + 1} · {image.label.toUpperCase()}</figcaption></figure>)}</div>
+          <div className="mag-photo-grid">{photoEssayImages.map((image, index) => <figure key={image.src} className={`mag-photo-${index + 1} mag-media`}><EditorialImage src={image.src} alt={image.label} sizes={index === 0 || index === 5 ? "(max-width: 640px) 100vw, 62vw" : "(max-width: 640px) 100vw, 31vw"} /><figcaption className="mag-credit">0{index + 1} · {image.label.toUpperCase()}</figcaption></figure>)}</div>
         </section>
 
         <section className="mag-section mag-index" aria-labelledby="index-title">
