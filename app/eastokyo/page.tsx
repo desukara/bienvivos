@@ -133,7 +133,10 @@ export default function EastokyoHome() {
           <div className="mag-rule-heading"><h2 id="front-title">FRONT OF BOOK · TOKYO NOW</h2></div>
           <div className="mag-front-grid">
             <article className="mag-front-lead">
-              <div className="mag-front-lead-image mag-media"><EditorialImage src="https://images.unsplash.com/photo-1561214115-f2f134cc4912?auto=format&fit=crop&w=1800&q=92" alt="Visitors looking at an art exhibition" sizes="(max-width: 640px) 100vw, (max-width: 899px) 58vw, 50vw" /></div>
+              <picture style={{ display: "block", width: "100%", marginBottom: "1rem" }}>
+                <source media="(max-width: 640px)" srcSet="/images/editorial/picasso-paul-smith-mobile.png" />
+                <img src="/images/editorial/picasso-paul-smith-desktop.png" alt="A visitor studying Picasso ceramics in the Paul Smith exhibition at The National Art Center, Tokyo" style={{ display: "block", width: "100%", height: "auto" }} />
+              </picture>
               <p className="mag-kicker">ART · PICASSO IN TOKYO</p><h3>Picasso, through the eyes of Paul Smith</h3><p>At The National Art Center, Tokyo, Picasso’s work meets Paul Smith’s unmistakable eye for color, pattern and surprise.</p>
             </article>
             <div className="mag-front-stack">
@@ -166,36 +169,35 @@ export default function EastokyoHome() {
           <div className="mag-night-sideword" aria-hidden="true">NIGHT</div>
           <div className="mag-night-grid">
             <header className="mag-night-heading"><p className="mag-kicker">MUSIC · P. 30</p><h2 id="night-title">Tokyo was never quiet.</h2><p>You just have to know where to listen. We follow the clubs, sounds and late-night obsessions setting the city’s pulse.</p></header>
-            <figure className="mag-night-image-main mag-media"><EditorialImage src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=2000&q=94" alt="Singer performing under concert lights" sizes="(max-width: 640px) 100vw, (max-width: 899px) 58vw, 58vw" /><figcaption className="mag-credit">LIVE · TOKYO / P. 30</figcaption></figure>
-            <figure className="mag-night-image-small mag-media"><EditorialImage src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1500&q=92" alt="Dance floor full of light and movement" sizes="(max-width: 640px) 84vw, 36vw" /><figcaption className="mag-credit">03:17 · THE NIGHT GOES ON</figcaption></figure>
+            <figure className="mag-night-image-main mag-media"><EditorialImage src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=2000&q=94" alt="Singer performing under concert lights" sizes="(max-width: 640px) 100vw, (max-width: 899px) 62vw, 58vw" /><figcaption className="mag-credit">LIVE · TOKYO / 01:14</figcaption></figure>
+            <div className="mag-night-copy"><p className="mag-deck">Tokyo sounds better after dark.</p><p>Somewhere between the last train and the first, the city changes register. Basements fill, speakers warm up, and rooms no bigger than living rooms become their own worlds.</p><p>We’re interested in those rooms—and in the people keeping them alive.</p></div>
+            <blockquote className="mag-night-quote">“The best nights are the ones you never planned.”</blockquote>
           </div>
         </section>
 
-        <section className="mag-section mag-index" aria-labelledby="index-title">
-          <div className="mag-index-head"><div><p className="mag-kicker">EASTOKYO GUIDE</p><h2 id="index-title">More Tokyo. Less routine.</h2></div><p>Four quick stories for the ride across town, each offering another reason to get off the train and see what’s out there.</p></div>
-          <figure className="mag-index-feature mag-media"><EditorialImage src={indexFeatureImage} alt="Tokyo lit up with crossings, signs and nighttime movement" sizes="(max-width: 640px) 100vw, 92vw" /><figcaption><span className="mag-kicker">TOKYO NOW · P. 64–76</span><strong>The Tokyo you find when you take the long way home.</strong></figcaption></figure>
-          <div className="mag-index-list">{indexStories.map((story) => <article className="mag-index-row" key={story.page}><strong>{story.page}</strong><div><small>{story.section}</small><h3>{story.title}</h3></div><p>{story.copy}</p><div className="mag-index-thumb mag-media" aria-hidden="true"><EditorialImage src={story.image} alt="" sizes="112px" /></div></article>)}</div>
+        <section className="mag-section mag-culture" aria-labelledby="culture-title">
+          <div className="mag-rule-heading"><h2>CULTURE · P. 42</h2></div>
+          <div className="mag-culture-grid">
+            <header><p className="mag-kicker">ESSAY · TABLE TALK</p><h2 id="culture-title">The best part starts after dinner.</h2><p className="mag-deck">The plates are empty. Nobody leaves. That’s when things get interesting.</p></header>
+            <figure className="mag-culture-image mag-media"><EditorialImage src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1800&q=94" alt="Friends sharing food and conversation at a table" sizes="(max-width: 640px) 100vw, (max-width: 899px) 60vw, 46vw" /><figcaption className="mag-credit">TOKYO · AFTER DINNER</figcaption></figure>
+            <div className="mag-culture-body"><p>Tokyo is exceptionally good at the beginning of an evening. Reservations are precise. Trains arrive on time. The first drink appears almost immediately.</p><p>But our favorite part comes later, once the evening has stopped behaving itself.</p><p>The table becomes crowded with empty glasses. Somebody orders something nobody needs. The conversation takes a turn that could never have been scheduled.</p><p>That is the Tokyo we want more of.</p></div>
+            <p className="mag-culture-bigword" aria-hidden="true">STAY</p>
+          </div>
         </section>
 
         <section className="mag-section mag-photo" id="foto" aria-labelledby="photo-title">
-          <div className="mag-photo-head"><p className="mag-kicker">PHOTO ESSAY · P. 56</p><h2 id="photo-title">Tokyo is not grey</h2><p>The city changes when you stop looking for the photograph. In these six frames, color, humor and accidental beauty emerge far from the landmarks and postcard version of Tokyo.</p></div>
-          <div className="mag-photo-grid" aria-label="Tokyo photo essay">{photoEssayImages.map((image, index) => <figure className="mag-photo-item" key={image.src}><div className="mag-media"><EditorialImage src={image.src} alt={image.label} sizes={index === 0 || index === 5 ? "(max-width: 640px) 86vw, 70vw" : "(max-width: 640px) 86vw, 28vw"} /></div><figcaption><span>0{index + 1}</span><span>{image.label}</span></figcaption></figure>)}</div>
+          <header className="mag-photo-heading"><p className="mag-kicker">PHOTO ESSAY · P. 56</p><h2 id="photo-title">Tokyo is not grey.</h2><p>Color is everywhere. You just have to stop treating the city like background.</p></header>
+          <div className="mag-photo-grid">{photoEssayImages.map((image, index) => <figure key={image.src} className={`mag-photo-${index + 1} mag-media`}><EditorialImage src={image.src} alt={image.label} sizes={index === 0 || index === 5 ? "(max-width: 640px) 100vw, 62vw" : "(max-width: 640px) 100vw, 31vw" /><figcaption className="mag-credit">0{index + 1} · {image.label.toUpperCase()}</figcaption></figure>)}</div>
         </section>
 
-        <section className="mag-back-cover" aria-labelledby="launch-title">
-          <div className="mag-back-inner">
-            <div className="mag-mini-cover" aria-label="Preview of EASTOKYO inaugural issue"><EditorialImage src={coverImage} alt="" sizes="(max-width: 640px) 70vw, 20rem" /><strong>EASTOKYO</strong><h3>Tokyo needs more passion</h3><p>Nº 01 · SEPTEMBER 2026</p></div>
-            <div className="mag-back-copy"><p className="mag-kicker">THE MAGAZINE STARTS HERE</p><h2 id="launch-title">There’s always more Tokyo.</h2><p>We’re here for the art, the food, the noise, the people and everything we almost walked past. EASTOKYO is a magazine about paying attention to the city we live in.</p><span className="mag-back-date">01 · 09 · 2026 · INAUGURAL ISSUE</span></div>
-          </div>
+        <section className="mag-section mag-index" aria-labelledby="index-title">
+          <div className="mag-index-header"><p className="mag-kicker">THE BACK PAGES · P. 64—79</p><h2 id="index-title">One more thing.</h2></div>
+          <figure className="mag-index-feature mag-media"><EditorialImage src={indexFeatureImage} alt="Tokyo street scene at night" sizes="100vw" /><figcaption className="mag-credit">TOKYO · KEEP LOOKING</figcaption></figure>
+          <div className="mag-index-grid">{indexStories.map((story) => <article key={story.page}><div className="mag-index-thumb mag-media"><EditorialImage src={story.image} alt="" sizes="(max-width: 640px) 100vw, 25vw" /></div><strong>{story.page}</strong><small>{story.section}</small><h3>{story.title}</h3><p>{story.copy}</p></article>)}</div>
         </section>
       </main>
 
-      <footer className="mag-footer">
-        <div className="mag-footer-top"><div><p className="mag-kicker">TOKYO, FULLY ALIVE</p><h2>See you where life happens.</h2></div><div className="mag-newsletter"><p>THE EASTOKYO LETTER</p><strong>Coming soon: more Tokyo, straight to your inbox.</strong></div></div>
-        <div className="mag-footer-links"><nav aria-label="Footer navigation">{navItems.map((item) => <a key={item.label} href={item.href}>{item.label}</a>)}</nav><div className="social-placeholder" aria-label="Social networks coming soon"><span>INSTAGRAM</span><span>TIKTOK</span><span>PINTEREST</span></div></div>
-        <a className="mag-footer-wordmark" href="#top" aria-label="Back to top">EASTOKYO</a>
-        <div className="mag-footer-bottom"><p>© 2026 EASTOKYO</p><p>MADE IN TOKYO · TOLD IN ENGLISH</p><a href="#top">BACK TO TOP ↑</a></div>
-      </footer>
+      <footer className="mag-footer"><div><strong>EASTOKYO</strong><p>Independent magazine · Tokyo</p></div><p>Tokyo, fully alive.</p><a href="#top">BACK TO TOP ↑</a></footer>
     </div>
   );
 }
