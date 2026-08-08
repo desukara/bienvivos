@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import "./eastokyo-layout-fix.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.eastokyo.com"),
