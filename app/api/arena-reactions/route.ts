@@ -9,9 +9,9 @@ type Target = 'arena-article' | 'arena-drama' | 'arena-return';
 const targets: Target[] = ['arena-article', 'arena-drama', 'arena-return'];
 const reactions: ReactionType[] = ['like', 'love', 'wow'];
 const reconstructedBaseline: Record<Target, Record<ReactionType, number>> = {
-  'arena-article': { like: 53, love: 29, wow: 17 },
-  'arena-drama': { like: 37, love: 20, wow: 20 },
-  'arena-return': { like: 35, love: 23, wow: 14 },
+  'arena-article': { like: 56, love: 31, wow: 18 },
+  'arena-drama': { like: 39, love: 21, wow: 21 },
+  'arena-return': { like: 37, love: 24, wow: 14 },
 };
 const redisUrl = process.env.UPSTASH_REDIS_REST_URL;
 const redisToken = process.env.UPSTASH_REDIS_REST_TOKEN;
